@@ -8,8 +8,6 @@
 		<true/>
 	</dict>
 	<key>SUFeedURL</key>
-	<string>https://gitee.com/Yuko/Zzz/raw/master/hostsTool/appcast.xml</string>
-	<key>SUPublicEDKey</key>
-	<string>IqmAL/4PBUY1LejXocSszpdeqxAMQXLi3ydovPOOvvs=</string>
+	<string>https://zzzm.github.io/AA/appcast.xml</string>
 </dict>
 </plist>
