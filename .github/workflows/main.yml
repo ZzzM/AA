@@ -15,26 +15,29 @@ jobs:
       uses: actions/checkout@v2.4.0
       
     - name: Package
-      run: fastlane package
+      run: |
+        fastlane run increment_build_number build_number:${GITHUB_SHA::7}
+        fastlane package
  
     - name: Create
       if: startsWith(github.ref, 'refs/tags/') 
       run: |
         brew install create-dmg
         create-dmg --hdiutil-quiet --app-drop-link 0 30 $APP_SCHEME.dmg $APP_SCHEME.app
+        ls
  
-    - name: Upload
-      uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
-      with:
-        name: ${{ github.ref }}(${GITHUB_SHA::7})
-        files: $APP_SCHEME.dmg
+#     - name: Upload
+#       uses: softprops/action-gh-release@v1
+#       if: startsWith(github.ref, 'refs/tags/')
+#       with:
+#         name: ${{ github.ref }}(${GITHUB_SHA::7})
+#         files: $APP_SCHEME.dmg
  
-    - name: Appcast
-      if: startsWith(github.ref, 'refs/tags/')
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+#     - name: Appcast
+#       if: startsWith(github.ref, 'refs/tags/')
+#       uses: peaceiris/actions-gh-pages@v3
+#       with:
+#         github_token: ${{ secrets.GITHUB_TOKEN }}
    
 env:
   APP_SCHEME: ${{ secrets.APP_SCHEME }}
