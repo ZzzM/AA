@@ -1,0 +1,21 @@
+on:
+  push:
+  
+  workflow_dispatch:
+
+jobs:
+  update_release_draft:
+    runs-on: ubuntu-latest
+    steps:
+ 
+    - name: create
+      if: startsWith(github.ref, 'refs/tags/') 
+      run: |
+ 
+ 
+    - name: gh-page
+      if: startsWith(github.ref, 'refs/tags/')
+      env:
+       GITHUB_TOKEN: ${{ secrets.GITPAGE_TOKEN }}
+      run: ｜
+#        curl -u yichengchen:$GITHUB_TOKEN -X POST https://api.github.com/repos/ZzzM/AA/pages/builds -H 'Accept: application/vnd.github.mister-fantastic-preview+json'
