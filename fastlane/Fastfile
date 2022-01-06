@@ -1,0 +1,22 @@
+default_platform(:mac)
+
+platform :mac do
+  
+  lane :build do
+    build_app(
+      clean: true,
+      silent: true,
+      export_method: 'mac-application'
+      )
+    # add actions here: https://docs.fastlane.tools/actions
+  end
+
+  lane :create do
+    sh "create-dmg  KAI.dmg KAI.app"
+  end
+
+  lane :clean do
+    sh "rm -vfr ~/Library/Developer/Xcode/Archives/*"
+  end
+
+end
