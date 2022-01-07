@@ -23,7 +23,7 @@ jobs:
 #       run: |
 #         brew install create-dmg
 #         create-dmg --hdiutil-quiet --app-drop-link 0 30 $APP_SCHEME.dmg $APP_SCHEME.app
-#         ls
+# #         ls
 
     - name: Set
       run: | 
@@ -40,11 +40,11 @@ jobs:
         name: ${{ env.APP_VERSION }}(${{ env.APP_BUILD }})
         files: ${{ env.APP_SCHEME }}.dmg
  
- 
-#     - name: Appcast
-#       uses: peaceiris/actions-gh-pages@v3
-#       with:
-#         github_token: ${{ secrets.GITHUB_TOKEN }}
-   
+    - name: Pages
+      uses: JamesIves/github-pages-deploy-action@4.2.0
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: build # The folder the action should deploy.
+          
 env:
   APP_SCHEME: ${{ secrets.APP_SCHEME }}
