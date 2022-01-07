@@ -30,8 +30,8 @@ jobs:
       id: vars
       run: |
       
-        version = `defaults read \`pwd\`/ClashX.app/Contents/Info.plist CFBundleShortVersionString`
-        build = `defaults read \`pwd\`/ClashX.app/Contents/Info.plist CFBundleVersion`
+        version = `defaults read \`pwd\`/$APP_SCHEME.app/Contents/Info.plist CFBundleShortVersionString`
+        build = `defaults read \`pwd\`/$APP_SCHEME.app/Contents/Info.plist CFBundleVersion`
         
         echo "APP_VERSION=$version" >> $GITHUB_ENV
         echo "APP_BUILD=$build" >> $GITHUB_ENV
