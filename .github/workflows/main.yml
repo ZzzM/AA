@@ -32,18 +32,17 @@ jobs:
        echo "APP_VERSION=$version" >> $GITHUB_ENV
        echo "APP_BUILD=$build" >> $GITHUB_ENV
         
-    - name: Upload
+    - name: Release
       uses: softprops/action-gh-release@v1
       with:
         body_path: CHANGELOG.md
         name: ${{ env.APP_VERSION }}(${{ env.APP_BUILD }})
         files: ${{ env.APP_SCHEME }}.dmg
  
-    - name: Pages
-      uses: JamesIves/github-pages-deploy-action@4.2.0
-      with:
-        branch: gh-pages
-        folder: .
+    - name: Appcast
+      run: |
+        curl -u ZzzM:$GITPAGE_TOKEN -X POST https://api.github.com/repos/ZzzM/AA/pages/builds -H "Accept: application/vnd.github.mister-fantastic-preview+json"
           
 env:
   APP_SCHEME: ${{ secrets.APP_SCHEME }}
+  GITPAGE_TOKEN: ${{ secrets.GITPAGE_TOKEN }}
