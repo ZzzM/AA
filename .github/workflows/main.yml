@@ -27,11 +27,12 @@ jobs:
 #         ls
  
     - name: Upload
-      uses: softprops/action-gh-release@v1
+#       uses: softprops/action-gh-release@v1
 #       if: startsWith(github.ref, 'refs/tags/')
-      with:
-        name: ${{ github.ref }}(${{ github.sha ::7 }})
+#       with:
+#         name: ${{ github.ref }}(${{ github.sha ::7 }})
 #         files: $APP_SCHEME.dmg
+      run: echo ${{ github.event }}
  
 #     - name: Appcast
 #       if: startsWith(github.ref, 'refs/tags/')
