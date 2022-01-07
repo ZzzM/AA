@@ -29,8 +29,7 @@ jobs:
     - name: Set
       id: vars
       run: | 
-        echo $PWD
-        cat $APP_SCHEME.app/Contents/Info.plist
+        defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleShortVersionString
 
         
 #        version=$(defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleShortVersionString)
