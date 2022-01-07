@@ -29,7 +29,7 @@ jobs:
     - name: Vars
       id: vars
       run: |
-        echo ::set-output name=version::${GITHUB_REF#refs/*/}
+        echo ::set-output name=version::${GITHUB_REF/refs\/tags\//}
         echo ::set-output name=build::${GITHUB_SHA::7}
 
     - name: Test
