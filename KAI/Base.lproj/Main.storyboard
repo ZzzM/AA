@@ -715,7 +715,24 @@
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rx3-Ab-P2F">
+                                <rect key="frame" x="222" y="127" width="37" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="RMJ-VM-dbn">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Rx3-Ab-P2F" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="ROW-mR-6lf"/>
+                            <constraint firstItem="Rx3-Ab-P2F" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="V0h-9c-6pV"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tt" destination="Rx3-Ab-P2F" id="ueR-8p-Kad"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
