@@ -20,7 +20,6 @@ jobs:
 #         fastlane package
  
 #     - name: Create
-# #       if: startsWith(github.ref, 'refs/tags/') 
 #       run: |
 #         brew install create-dmg
 #         create-dmg --hdiutil-quiet --app-drop-link 0 30 $APP_SCHEME.dmg $APP_SCHEME.app
@@ -41,7 +40,6 @@ jobs:
  
  
 #     - name: Appcast
-#       if: startsWith(github.ref, 'refs/tags/')
 #       uses: peaceiris/actions-gh-pages@v3
 #       with:
 #         github_token: ${{ secrets.GITHUB_TOKEN }}
