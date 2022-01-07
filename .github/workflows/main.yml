@@ -11,13 +11,13 @@ jobs:
     runs-on: macos-latest
     steps:
 
-    - name: Checkout
-      uses: actions/checkout@v2.4.0
+#     - name: Checkout
+#       uses: actions/checkout@v2.4.0
       
-    - name: Package
-      run: |
-        fastlane run increment_build_number build_number:${GITHUB_SHA::7}
-        fastlane package
+#     - name: Package
+#       run: |
+#         fastlane run increment_build_number build_number:${GITHUB_SHA::7}
+#         fastlane package
  
 #     - name: Create
 #       run: |
@@ -30,20 +30,20 @@ jobs:
       id: vars
       run: |
       
-        version = `defaults read \`pwd\`/$APP_SCHEME.app/Contents/Info.plist CFBundleShortVersionString`
-        build = `defaults read \`pwd\`/$APP_SCHEME.app/Contents/Info.plist CFBundleVersion`
+        version=`defaults read \`pwd\`/$APP_SCHEME.app/Contents/Info.plist CFBundleShortVersionString`
+        build=`defaults read \`pwd\`/$APP_SCHEME.app/Contents/Info.plist CFBundleVersion`
         
         echo "APP_VERSION=$version" >> $GITHUB_ENV
         echo "APP_BUILD=$build" >> $GITHUB_ENV
 
-#     - name: Test
-#       run: echo $APP_VERSION $APP_BUILD
+    - name: Test
+      run: echo $APP_VERSION $APP_BUILD
  
-    - name: Upload
-      uses: softprops/action-gh-release@v1
-      with:
-        name: $APP_VERSION($APP_BUILD)
-        files: $APP_SCHEME.app
+#     - name: Upload
+#       uses: softprops/action-gh-release@v1
+#       with:
+#         name: $APP_VERSION($APP_BUILD)
+#         files: $APP_SCHEME.app
  
  
 #     - name: Appcast
