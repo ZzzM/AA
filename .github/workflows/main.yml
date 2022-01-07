@@ -31,7 +31,7 @@ jobs:
       run: |
       
         echo $PWD
-        echo ls
+        ls
 #        version=$(defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleShortVersionString)
 #        build=$(defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleVersion)
         
