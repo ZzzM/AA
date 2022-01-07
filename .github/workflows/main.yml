@@ -30,15 +30,16 @@ jobs:
       id: vars
       run: |
       
-
-       version=$(defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleShortVersionString)
-       build=$(defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleVersion)
+        echo $PWD
+        echo ls
+#        version=$(defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleShortVersionString)
+#        build=$(defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleVersion)
         
-        echo "APP_VERSION=$version" >> $GITHUB_ENV
-        echo "APP_BUILD=$build" >> $GITHUB_ENV
+#         echo "APP_VERSION=$version" >> $GITHUB_ENV
+#         echo "APP_BUILD=$build" >> $GITHUB_ENV
 
-    - name: Test
-      run: echo $APP_VERSION $APP_BUILD
+#     - name: Test
+#       run: echo $APP_VERSION $APP_BUILD
  
 #     - name: Upload
 #       uses: softprops/action-gh-release@v1
