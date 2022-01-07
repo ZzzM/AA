@@ -14,16 +14,15 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2.4.0
       
-#     - name: Package
-#       run: |
-#         fastlane run increment_build_number build_number:${GITHUB_SHA::7}
-#         fastlane package
+    - name: Package
+      run: |
+        fastlane run increment_build_number build_number:${GITHUB_SHA::7}
+        fastlane package
  
-#     - name: Create
-#       run: |
-#         brew install create-dmg
-#         create-dmg --hdiutil-quiet --app-drop-link 0 30 $APP_SCHEME.dmg $APP_SCHEME.app
-# #         ls
+    - name: Create
+      run: |
+        brew install create-dmg
+        create-dmg --hdiutil-quiet --app-drop-link 0 30 $APP_SCHEME.dmg $APP_SCHEME.app
 
     - name: Set
       run: | 
@@ -43,8 +42,8 @@ jobs:
     - name: Pages
       uses: JamesIves/github-pages-deploy-action@4.2.0
       with:
-        branch: gh-pages # The branch the action should deploy to.
-        folder: build # The folder the action should deploy.
+        branch: gh-pages
+        folder: .
           
 env:
   APP_SCHEME: ${{ secrets.APP_SCHEME }}
