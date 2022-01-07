@@ -38,11 +38,11 @@ jobs:
     - name: Test
       run: echo $APP_VERSION $APP_BUILD
  
-#     - name: Upload
-#       uses: softprops/action-gh-release@v1
-#       with:
-#         name: $APP_VERSION($APP_BUILD)
-#         files: $APP_SCHEME.app
+    - name: Upload
+      uses: softprops/action-gh-release@v1
+      with:
+        name: $APP_VERSION($APP_BUILD)
+        files: $APP_SCHEME.dmg
  
  
 #     - name: Appcast
