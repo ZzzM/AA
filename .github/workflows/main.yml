@@ -11,8 +11,8 @@ jobs:
     runs-on: macos-latest
     steps:
 
-#     - name: Checkout
-#       uses: actions/checkout@v2.4.0
+    - name: Checkout
+      uses: actions/checkout@v2.4.0
       
 #     - name: Package
 #       run: |
@@ -29,7 +29,9 @@ jobs:
     - name: Set
       id: vars
       run: | 
-         defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist
+        echo $PWD
+        ls
+
         
 #        version=$(defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleShortVersionString)
 #        build=$(defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleVersion)
