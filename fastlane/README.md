@@ -15,18 +15,18 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## Mac
 
-### mac build
+### mac package
 
 ```sh
-[bundle exec] fastlane mac build
+[bundle exec] fastlane mac package
 ```
 
 
 
-### mac create
+### mac build
 
 ```sh
-[bundle exec] fastlane mac create
+[bundle exec] fastlane mac build
 ```
 
 
