@@ -31,8 +31,8 @@ jobs:
       run: |
       
 
-       version = defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleShortVersionString
-       build = defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleVersion
+       version=$(defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleShortVersionString)
+       build=$(defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleVersion)
         
         echo "APP_VERSION=$version" >> $GITHUB_ENV
         echo "APP_BUILD=$build" >> $GITHUB_ENV
