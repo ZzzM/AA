@@ -26,14 +26,14 @@ jobs:
 #         ls
 
 
-    - name: Setup
+    - name: Vars
+      id: vars
       run: |
         echo ::set-output name=version::${GITHUB_REF#refs/*/}
-      
-#       echo ::set-output name=build::${GITHUB_SHA::7}
+        echo ::set-output name=build::${GITHUB_SHA::7}
 
     - name: Test
-      run: echo ${{ steps.vars.outputs.version }}
+      run: echo ${{ steps.vars.outputs.version }} ${{ steps.vars.outputs.build }}
  
 #     - name: Upload
 #       uses: softprops/action-gh-release@v1
