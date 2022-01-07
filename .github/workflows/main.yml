@@ -30,7 +30,7 @@ jobs:
       id: vars
       run: | 
         echo $PWD
-        ls
+        cat $APP_SCHEME.app/Contents/Info.plist
 
         
 #        version=$(defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleShortVersionString)
