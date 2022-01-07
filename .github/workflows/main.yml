@@ -1,7 +1,7 @@
 on:
   push:
     tags:
-      - 1.*
+      - '*'
   
   workflow_dispatch:
 
@@ -14,10 +14,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2.4.0
       
-#     - name: Package
-#       run: |
-#         fastlane run increment_build_number build_number:${GITHUB_SHA::7}
-#         fastlane package
+    - name: Package
+      run: |
+        fastlane run increment_build_number build_number:${GITHUB_SHA::7}
+        fastlane package
  
 #     - name: Create
 #       run: |
@@ -26,20 +26,24 @@ jobs:
 #         ls
 
 
-    - name: Vars
+    - name: Set
       id: vars
       run: |
-        echo ::set-output name=version::${GITHUB_REF/refs\/tags\//}
-        echo ::set-output name=build::${GITHUB_SHA::7}
+      
+        version = `defaults read \`pwd\`/ClashX.app/Contents/Info.plist CFBundleShortVersionString`
+        build = `defaults read \`pwd\`/ClashX.app/Contents/Info.plist CFBundleVersion`
+        
+        echo "APP_VERSION=$version" >> $GITHUB_ENV
+        echo "APP_BUILD=$build" >> $GITHUB_ENV
 
-    - name: Test
-      run: echo ${{ steps.vars.outputs.version }} ${{ steps.vars.outputs.build }}
+#     - name: Test
+#       run: echo $APP_VERSION $APP_BUILD
  
-#     - name: Upload
-#       uses: softprops/action-gh-release@v1
-#       with:
-#         name: $${{ steps.vars.outputs.version }}(${{ steps.vars.outputs.build }})
-#         files: $APP_SCHEME.dmg
+    - name: Upload
+      uses: softprops/action-gh-release@v1
+      with:
+        name: $APP_VERSION($APP_BUILD)
+        files: $APP_SCHEME.app
  
  
 #     - name: Appcast
