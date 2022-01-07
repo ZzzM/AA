@@ -1,15 +1,22 @@
-# Changelog
 
-## [1.0.0] - 2014-05-31
 
+[//]: 1.0.0
 ### Added
 
-- This CHANGELOG file to hopefully serve as an evolving example of a
-  standardized open source project CHANGELOG.
-- CNAME file to enable GitHub Pages custom domain
-- README now contains answers to common questions about CHANGELOGs
-- Good examples and basic guidelines, including proper date formatting.
-- Counter-examples: "What makes unicorns cry?"
 
 
-[0.0.1]: https://github.com/olivierlacan/keep-a-changelog/releases/tag/v0.0.1
+[//]: Note
+<!-- `Added` for new features.
+`Changed` for changes in existing functionality.
+`Deprecated` for soon-to-be removed features.
+`Removed` for now removed features.
+`Fixed` for any bug fixes.
+`Security` in case of vulnerabilities.
+
+`Added` 新添加的功能。
+`Changed` 对现有功能的变更。
+`Deprecated` 已经不建议使用，准备很快移除的功能。
+`Removed` 已经移除的功能。
+`Fixed` 对bug的修复
+`Security` 对安全的改进  -->
+
