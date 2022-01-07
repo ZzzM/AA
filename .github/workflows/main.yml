@@ -41,7 +41,7 @@ jobs:
     - name: Upload
       uses: softprops/action-gh-release@v1
       with:
-        name: ${{ APP_VERSION }}(${{ env.APP_BUILD }})
+        name: ${{ env.APP_VERSION }}(${{ env.APP_BUILD }})
         files: ${{ env.APP_SCHEME }}.dmg
  
  
