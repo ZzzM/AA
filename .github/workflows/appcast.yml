@@ -17,9 +17,9 @@ jobs:
     steps:
     
       - run: |
-          curl  --fail --request POST \
-              --url https://api.github.com/repos/${{ github.repository }}/pages/builds \
-              --header "Authorization: ZzzM $GITPAGE_TOKEN"
+          curl -u ZzzM:$GITPAGE_TOKEN -X POST \
+          https://api.github.com/repos/${{ github.repository }}/pages/builds \
+          -H "Accept: application/vnd.github.mister-fantastic-preview+json"
               
 env:
   APP_SCHEME: ${{ secrets.APP_SCHEME }}
