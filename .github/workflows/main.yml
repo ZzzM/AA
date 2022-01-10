@@ -24,27 +24,34 @@ jobs:
         brew install create-dmg
         create-dmg --hdiutil-quiet --app-drop-link 0 30 $APP_SCHEME.dmg $APP_SCHEME.app
 
-    - name: Set
+    - name: Update
       run: | 
-       version=$(defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleShortVersionString)
-       build=$(defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleVersion)
+       version=`defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleShortVersionString`
+       build=`defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleVersion`
+       signature=`sign_update -s $SPARKLE_KEY KAI.dmg`
        
-       echo "APP_VERSION=$version" >> $GITHUB_ENV
-       echo "APP_BUILD=$build" >> $GITHUB_ENV
+      #  echo "## $version - `date +%F` \n`cat CHANGELOG.md` \n\n`cat RELEASES.md`" > RELEASES.md
+      #  echo "<\!-- ${signature% *} -->" >> CHANGELOG.md
+      #  echo "<\!-- build=$build -->" >> CHANGELOG.md
+
+       echo "<\!-- ${signature% *} -->"
+       echo "<\!-- build=$build -->"
+      #  echo "APP_VERSION=$version" > $GITHUB_ENV
+      #  echo "APP_BUILD=$build" > $GITHUB_ENV
         
-    - name: Release
-      uses: softprops/action-gh-release@v1
-      with:
-        body_path: CHANGELOG.md
-        name: ${{ env.APP_VERSION }}(${{ env.APP_BUILD }})
-        files: ${{ env.APP_SCHEME }}.dmg
+    # - name: Release
+    #   uses: softprops/action-gh-release@v1
+    #   with:
+    #     body_path: CHANGELOG.md
+    #     files: ${{ env.APP_SCHEME }}.dmg
  
-    - name: Appcast
-      run: |
-        curl  --fail --request POST \
-              --url https://api.github.com/repos/${{ github.repository }}/pages/builds \
-              --header "Authorization: ZzzM $GITPAGE_TOKEN"
+    # - name: Appcast
+    #   run: |
+    #       curl -u ZzzM:$GITPAGE_TOKEN -X POST \
+    #       https://api.github.com/repos/${{ github.repository }}/pages/builds \
+    #       -H "Accept: application/vnd.github.mister-fantastic-preview+json"
               
 env:
   APP_SCHEME: ${{ secrets.APP_SCHEME }}
   GITPAGE_TOKEN: ${{ secrets.GITPAGE_TOKEN }}
+  SPARKLE_KEY: {{ secrets.SPARKLE_KEY }}
