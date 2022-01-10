@@ -51,4 +51,4 @@ jobs:
 env:
   APP_SCHEME: ${{ secrets.APP_SCHEME }}
   GITPAGE_TOKEN: ${{ secrets.GITPAGE_TOKEN }}
-  SPARKLE_KEY: {{ secrets.SPARKLE_KEY }}
+  SPARKLE_KEY: ${{ secrets.SPARKLE_KEY }}
