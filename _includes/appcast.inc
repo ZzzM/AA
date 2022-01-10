@@ -12,13 +12,13 @@
                         <description><![CDATA[{{ release.body | markdownify }}]]></description>
                         <pubDate>{{ release.published_at | date_to_rfc822 }}</pubDate>
                         {% for asset in release.assets limit:1 %}
-                            {% assign build_nums = release.name | remove_first:')' | split:'(' %}
-                            {% assign version = build_nums[0] %}
-                            {% assign build = build_nums[1] %}
+                            {% assign build = "" %}
+                            {% assign signature = "" %}
                             <enclosure
                                 url="{{ asset.browser_download_url }}"
                                 sparkle:version="{{ build }}"
-                                sparkle:shortVersionString="{{ version }}"
+                                sparkle:shortVersionString="{{ release.tag_name }}"
+                                sparkle:edSignature="{{ signature }}"
                                 length="{{ asset.size }}"
                                 type="application/octet-stream" />
                         {% endfor %}
