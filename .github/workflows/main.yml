@@ -29,16 +29,13 @@ jobs:
        version=`defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleShortVersionString`
        build=`defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleVersion`
        signature=`sign_update -s $SPARKLE_KEY KAI.dmg`
-       
+       echo "<\!-- ${signature% *} -->"
+       echo "<\!-- build=$build -->"
       #  echo "## $version - `date +%F` \n`cat CHANGELOG.md` \n\n`cat RELEASES.md`" > RELEASES.md
       #  echo "<\!-- ${signature% *} -->" >> CHANGELOG.md
       #  echo "<\!-- build=$build -->" >> CHANGELOG.md
-
-       echo "<\!-- ${signature% *} -->"
-       echo "<\!-- build=$build -->"
-      #  echo "APP_VERSION=$version" > $GITHUB_ENV
-      #  echo "APP_BUILD=$build" > $GITHUB_ENV
-        
+       
+      
     # - name: Release
     #   uses: softprops/action-gh-release@v1
     #   with:
