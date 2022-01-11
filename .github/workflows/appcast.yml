@@ -4,8 +4,6 @@ name: Appcast
 
 
 on:
-
-  push:
   
   workflow_dispatch:
 
@@ -18,18 +16,18 @@ jobs:
 
     steps:
     
-      - name: test
-        run: |
-          build=123
-          signature=UyGJkUXMfP21nmolTrtqGM8Gg2
-          xz=`echo ${signature%\" *}`
-          echo "<!--$build,${xz#*=\"}-->"
+#       - name: test
+#         run: |
+#           build=123
+#           signature=UyGJkUXMfP21nmolTrtqGM8Gg2
+#           xz=`echo ${signature%\" *}`
+#           echo "<!--$build,${xz#*=\"}-->"
     
     
-#       - run: |
-#           curl -u ZzzM:$GITPAGE_TOKEN -X POST \
-#           https://api.github.com/repos/${{ github.repository }}/pages/builds \
-#           -H "Accept: application/vnd.github.mister-fantastic-preview+json"
+      - run: |
+          curl -u ZzzM:$GITPAGE_TOKEN -X POST \
+          https://api.github.com/repos/${{ github.repository }}/pages/builds \
+          -H "Accept: application/vnd.github.mister-fantastic-preview+json"
               
 env:
   APP_SCHEME: ${{ secrets.APP_SCHEME }}
