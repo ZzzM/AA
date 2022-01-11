@@ -13,7 +13,6 @@
                         <pubDate>{{ release.published_at | date_to_rfc822 }}</pubDate>
                         {% for asset in release.assets limit:1 %}
                             {% assign arguments =  release.body | split:'<!--' | last | split:',' %}
-<!--                             {% assign param =  other.last | split:',' %} -->
                             <enclosure
                                 url="{{ asset.browser_download_url }}"
                                 sparkle:version="{{ arguments.first }}"
