@@ -16,10 +16,17 @@ jobs:
 
     steps:
     
-      - run: |
-          curl -u ZzzM:$GITPAGE_TOKEN -X POST \
-          https://api.github.com/repos/${{ github.repository }}/pages/builds \
-          -H "Accept: application/vnd.github.mister-fantastic-preview+json"
+      - name: test
+        run: |
+          build=123
+          signature=`sparkle:edSignature="UyGJkUXMfP21nmolTrtqGM8Gg2/6vrHXNEpb7wBdQvAs/0X5i7s6ZTaporMLQDR6Iuo/4ijkEspyR2iexWL5Ag==" length="1199585"`
+          echo "<\!--${build},${$(echo ${signature%\" *})#*=\"}-->"
+    
+    
+#       - run: |
+#           curl -u ZzzM:$GITPAGE_TOKEN -X POST \
+#           https://api.github.com/repos/${{ github.repository }}/pages/builds \
+#           -H "Accept: application/vnd.github.mister-fantastic-preview+json"
               
 env:
   APP_SCHEME: ${{ secrets.APP_SCHEME }}
