@@ -31,7 +31,7 @@ jobs:
        signature=`$PWD/sign_update -s $SPARKLE_KEY KAI.dmg`
        
        echo "## $version - `date +%F` \n`cat CHANGELOG.md` \n\n`cat RELEASES.md`" > RELEASES.md
-       echo "<\!--$build,${$(echo ${signature%\" *})#*=\"}-->" >> CHANGELOG.md
+       echo "<\!--${build},${$(echo ${signature%\" *})#*=\"}-->" >> CHANGELOG.md
        
     - name: Release
       uses: softprops/action-gh-release@v1
