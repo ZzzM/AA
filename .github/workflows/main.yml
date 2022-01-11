@@ -28,10 +28,14 @@ jobs:
       run: | 
        version=`defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleShortVersionString`
        build=`defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleVersion`
+       
        sparkle=`$PWD/sign_update -s $SPARKLE_KEY KAI.dmg`
-       signature="${${sparkle%\" *}#*=\"}"
+       sparkle=${sparkle%\" *}
+       signature=${sparkle#*=\"}
+       
        releases=`cat RELEASES.md`
-       changelog=${${releases%%---*}#*###}
+       releases=${releases%%---*}
+       changelog=${releases#*###}
        
        echo "###$changelog <!--$build,$signature" > CHANGELOG.md
        
