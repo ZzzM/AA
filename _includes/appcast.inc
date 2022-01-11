@@ -13,7 +13,7 @@
                         <pubDate>{{ release.published_at | date_to_rfc822 }}</pubDate>
                         {% for asset in release.assets limit:1 %}
 <!--                             {% assign vals = release.body | split:'[//]:' | last | jsonify %} -->
-                            {% assign build = '' %}
+                            {% assign build = {{ release.body | sparkle_build }} %}
                             {% assign signature = ''  %}
                             <enclosure
                                 url="{{ asset.browser_download_url }}"
