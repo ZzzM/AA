@@ -28,11 +28,12 @@ jobs:
       run: | 
        version=`defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleShortVersionString`
        build=`defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleVersion`
-       signature=`$PWD/sign_update -s $SPARKLE_KEY KAI.dmg`
-       temp=`echo ${signature%\" *}`
+       sparkle=`$PWD/sign_update -s $SPARKLE_KEY KAI.dmg`
+       signature=${${sparkle%\" *}#*=\"}
+       releases=`cat RELEASES.md`
+       changelog=${${releases%%---*}#*###}
        
-       echo "## $version - `date +%F` \n`cat CHANGELOG.md` \n\n`cat RELEASES.md`" > RELEASES.md
-       echo "\n<!--$build,${temp#*=\"}" >> CHANGELOG.md
+       echo "###$changelog <!--$build,$signature" > CHANGELOG.md
        
     - name: Release
       uses: softprops/action-gh-release@v1
