@@ -19,7 +19,7 @@ jobs:
       - name: test
         run: |
           build=123
-          signature=$(sparkle:edSignature="UyGJkUXMfP21nmolTrtqGM8Gg2/6vrHXNEpb7wBdQvAs/0X5i7s6ZTaporMLQDR6Iuo/4ijkEspyR2iexWL5Ag==" length="1199585")
+          signature=UyGJkUXMfP21nmolTrtqGM8Gg2
           echo "<\!--$build,${$(echo ${signature%\" *})#*=\"}-->"
     
     
