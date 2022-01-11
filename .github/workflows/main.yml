@@ -32,7 +32,7 @@ jobs:
        temp=`echo ${signature%\" *}`
        
        echo "## $version - `date +%F` \n`cat CHANGELOG.md` \n\n`cat RELEASES.md`" > RELEASES.md
-       echo "<\!--$build,${temp#*=\"}-->" >> CHANGELOG.md
+       echo "\n<!--$build,${temp#*=\"}" >> CHANGELOG.md
        
     - name: Release
       uses: softprops/action-gh-release@v1
