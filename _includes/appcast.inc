@@ -12,9 +12,9 @@
                         <description><![CDATA[{{ release.body | markdownify }}]]></description>
                         <pubDate>{{ release.published_at | date_to_rfc822 }}</pubDate>
                         {% for asset in release.assets limit:1 %}
-                            {% assign vals = release.body | split:'[//]:' | last | jsonify %}
-                            {% assign build = vals.build %}
-                            {% assign signature = vals.signature  %}
+<!--                             {% assign vals = release.body | split:'[//]:' | last | jsonify %} -->
+                            {% assign build = '' %}
+                            {% assign signature = ''  %}
                             <enclosure
                                 url="{{ asset.browser_download_url }}"
                                 sparkle:version="{{ build }}"
