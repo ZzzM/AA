@@ -1,3 +1,25 @@
+## 1.0.1 - 2022-01-11
+### Added
+
+- a
+
+### Changed
+
+- b
+
+---
+
+## 1.0.0 - 2022-01-10 
+### Added
+
+- a
+
+### Changed
+
+- b
+
+---
+
 ## Note
 
 - `Added` for new features
