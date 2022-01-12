@@ -15,9 +15,9 @@
                             {% assign arguments =  release.body | split:'<!--' | last | remove: '-->' |split:',' %}
                             <enclosure
                                 url="{{ asset.browser_download_url }}"
-                                sparkle:version="{{ arguments.first.strip }}"
+                                sparkle:version="{{ arguments.first | strip }}"
                                 sparkle:shortVersionString="{{ release.tag_name }}"
-                                sparkle:edSignature="{{ arguments.last.strip }}"
+                                sparkle:edSignature="{{ arguments.last | strip }}"
                                 length="{{ asset.size }}"
                                 type="application/octet-stream" />
                         {% endfor %}
