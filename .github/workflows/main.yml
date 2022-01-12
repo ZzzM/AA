@@ -40,8 +40,10 @@ jobs:
        changelog=`cat RELEASES.md`
        changelog=${changelog%%---*}
        changelog=${changelog#*###}
+       changelog=###$changelog
+       content="<!-- $build,$signature -->"
        
-       echo "###$changelog \n<!-- $build,$signature -->" > CHANGELOG.md
+       echo $changelog'\n'$content > CHANGELOG.md
        
     - name: Release
       uses: softprops/action-gh-release@v1
