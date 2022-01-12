@@ -22,7 +22,11 @@ jobs:
     - name: Create
       run: |
         brew install create-dmg
-        create-dmg --hdiutil-quiet --app-drop-link 0 30 $APP_SCHEME.dmg $APP_SCHEME.app
+        
+        create-dmg \
+        --volicon AppIcon.icns \
+        --hdiutil-quiet --app-drop-link 0 30  \
+        $APP_SCHEME.dmg $APP_SCHEME.app
 
     - name: Update
       run: | 
