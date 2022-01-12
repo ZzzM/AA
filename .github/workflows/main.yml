@@ -29,15 +29,15 @@ jobs:
        version=`defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleShortVersionString`
        build=`defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleVersion`
        
-       sparkle=`$PWD/sign_update -s $SPARKLE_KEY KAI.dmg`
-       sparkle=${sparkle%\" *}
+       signature=`$PWD/sign_update -s $SPARKLE_KEY KAI.dmg`
+       signature=${sparkle%\" *}
        signature=${sparkle#*=\"}
        
        releases=`cat RELEASES.md`
        releases=${releases%%---*}
-       changelog=${releases#*###}
+       releases=${releases#*###}
        
-       echo "###$changelog <!--$build,$signature" > CHANGELOG.md
+       echo "###$changelog <!-- $build,$signature -->" > CHANGELOG.md
        
     - name: Release
       uses: softprops/action-gh-release@v1
