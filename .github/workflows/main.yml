@@ -24,8 +24,8 @@ jobs:
         brew install create-dmg
         
         create-dmg \
-        --volicon AppIcon.icns \
-        --hdiutil-quiet --app-drop-link 0 30  \
+        --hdiutil-quiet \
+        --app-drop-link 0 30  \
         $APP_SCHEME.dmg $APP_SCHEME.app
 
     - name: Update
@@ -41,7 +41,7 @@ jobs:
        changelog=${changelog%%---*}
        changelog=${changelog#*###}
        
-       echo "###$changelog <!-- $build,$signature -->" > CHANGELOG.md
+       echo "###$changelog \n<!-- $build,$signature -->" > CHANGELOG.md
        
     - name: Release
       uses: softprops/action-gh-release@v1
