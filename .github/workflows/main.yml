@@ -41,7 +41,7 @@ jobs:
        changelog=`cat RELEASES.md`
        changelog=${changelog%%---*}
        changelog=${changelog#*###}
-       changelog=`echo ###$changelog`
+       changelog=###$changelog
        content=`echo "<!-- $build,$signature -->"`
        
        echo $changelog$content > CHANGELOG.md
