@@ -30,7 +30,9 @@ jobs:
 #           -H "Accept: application/vnd.github.mister-fantastic-preview+json"
           
   
-      - name: Deploy 🚀
+      - uses: actions/checkout@v3
+  
+      - name: Rebuild 🚀
         run: |
           git commit -m 'rebuild pages' --allow-empty
           git push origin gh-pages
