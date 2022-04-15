@@ -35,7 +35,11 @@ jobs:
       - name: Rebuild 🚀
         run: |
           git commit -m 'rebuild pages' --allow-empty
-          git push origin gh-pages
+  
+      - name: Push
+        uses: ad-m/github-push-action@master
+        with:
+         branch: 'gh-pages'
               
 # env:
 #   APP_SCHEME: ${{ secrets.APP_SCHEME }}
