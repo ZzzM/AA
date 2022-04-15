@@ -39,7 +39,7 @@ jobs:
         with:
           github-token: ${{ secrets.PERSONAL_TOKEN }}
           script: |
-            github.repos.requestPageBuild({
+            github.rest.repos.requestPagesBuild({
               owner: context.repo.owner,
               repo: context.repo.repo,
             })
