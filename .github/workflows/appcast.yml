@@ -26,13 +26,13 @@ jobs:
     
       - name: Rebuild
         run: |
-          gh auth status \
-          curl https://api.github.com/repos/${{ github.repository }}/pages/builds \
-          -X POST \
-          -H "Authorization: token ${{ github.token }}" \
-          -H "Accept: application/vnd.github.v3+json" \
+          gh api \
+            -H "Accept: application/vnd.github.v3+json" \
+            /repos/${{ github.repository }}/pages/builds/latest
           
-              
-# env:
-#   APP_SCHEME: ${{ secrets.APP_SCHEME }}
-#   secrets.PERSONAL_TOKEN
+
+#           curl https://api.github.com/repos/${{ github.repository }}/pages/builds \
+#           -X POST \
+#           -H "Authorization: token ${{ secrets.PERSONAL_TOKEN }}" \
+#           -H "Accept: application/vnd.github.v3+json" \
+          
