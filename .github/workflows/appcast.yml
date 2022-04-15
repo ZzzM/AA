@@ -24,14 +24,25 @@ jobs:
 #           echo "<!--$build,${xz#*=\"}-->"
     
     
-      - name: Rebuild
-        run: |
-          gh api \
-            -H "Accept: application/vnd.github.v3+json" \
-            /repos/${{ github.repository }}/pages/builds/latest
-        env:
-          GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+#       - name: Rebuild
+#         run: |
+#           gh api \
+#             -H "Accept: application/vnd.github.v3+json" \
+#             /repos/${{ github.repository }}/pages/builds/latest
+#         env:
+#           GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
           
+          
+          
+      - name: Rebuild 🚀 
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.PERSONAL_TOKEN }}
+          script: |
+            github.repos.requestPageBuild({
+              context.repo.owner,
+              context.repo.repo,
+            });
 
 #           curl https://api.github.com/repos/${{ github.repository }}/pages/builds \
 #           -X POST \
