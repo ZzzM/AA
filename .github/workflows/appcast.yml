@@ -22,17 +22,7 @@ jobs:
 #           signature=UyGJkUXMfP21nmolTrtqGM8Gg2
 #           xz=`echo ${signature%\" *}`
 #           echo "<!--$build,${xz#*=\"}-->"
-    
-    
-#       - name: Rebuild
-#         run: |
-#           gh api \
-#             -H "Accept: application/vnd.github.v3+json" \
-#             /repos/${{ github.repository }}/pages/builds/latest
-#         env:
-#           GH_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-          
-          
+              
           
       - name: Rebuild 🚀 
         uses: actions/github-script@v6
@@ -44,8 +34,4 @@ jobs:
               repo: context.repo.repo,
             })
 
-#           curl https://api.github.com/repos/${{ github.repository }}/pages/builds \
-#           -X POST \
-#           -H "Authorization: token ${{ secrets.PERSONAL_TOKEN }}" \
-#           -H "Accept: application/vnd.github.v3+json" \
           
