@@ -40,9 +40,9 @@ jobs:
           github-token: ${{ secrets.PERSONAL_TOKEN }}
           script: |
             github.repos.requestPageBuild({
-              context.repo.owner,
-              context.repo.repo,
-            });
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            })
 
 #           curl https://api.github.com/repos/${{ github.repository }}/pages/builds \
 #           -X POST \
