@@ -26,10 +26,11 @@ jobs:
     
       - name: Rebuild
         run: |
+          gh auth status \
           curl https://api.github.com/repos/${{ github.repository }}/pages/builds \
           -X POST \
           -H "Authorization: token ${{ github.token }}" \
-          -H "Accept: application/vnd.github.mister-fantastic-preview+json" \
+          -H "Accept: application/vnd.github.v3+json" \
           
               
 # env:
