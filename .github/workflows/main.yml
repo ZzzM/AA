@@ -31,28 +31,34 @@ jobs:
         --app-drop-link 0 30  \
         $APP_SCHEME.dmg $APP_SCHEME.app
 
-#     - name: Update
-#       run: | 
+    - name: Update
+      run: | 
  
-#        build=`defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleVersion`
+       build=`defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleVersion`
        
-#        signature=`$PWD/sign_update -s $SPARKLE_KEY KAI.dmg`
-#        signature=${signature%\" *}
-#        signature=${signature#*=\"}
+       signature=`$PWD/sign_update -s $SPARKLE_KEY KAI.dmg`
+       signature=${signature%\" *}
+       signature=${signature#*=\"}
        
-#        changelog=`cat RELEASES.md`
-#        changelog=${changelog%%---*}
-#        changelog=${changelog#*###}
-#        changelog="###$changelog"
-#        content="<!-- $build,$signature -->"
+       changelog=`cat RELEASES.md`
+       changelog=${changelog%%---*}
+       changelog=${changelog#*###}
+       changelog="###$changelog"
+       content="<!-- $build,$signature -->"
        
-#        echo "$changelog$content" > CHANGELOG.md
+       echo "$changelog$content" > CHANGELOG.md
        
-#     - name: Release
-#       uses: softprops/action-gh-release@v1
-#       with:
-#         body_path: CHANGELOG.md
-#         files: ${{ env.APP_SCHEME }}.dmg
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        body_path: CHANGELOG.md
+        files: ${{ env.APP_SCHEME }}.dmg
+ 
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4.3.0
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: .
  
 #     - name: Appcast
 #       run: |
