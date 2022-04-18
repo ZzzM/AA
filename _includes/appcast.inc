@@ -12,7 +12,7 @@
                         {% assign note = content.first %}
                         {% assign arguments = content.last | remove: '-->' | split:',' %}
                         <title>{{ name }}</title>
-                        <description><![CDATA[{{ note| markdownify }}]]></description>
+                        <description><![CDATA[{{ note| strip }}]]></description>
                         <pubDate>{{ release.published_at | date_to_rfc822 }}</pubDate>
                         {% for asset in release.assets limit:1 %}
                             <enclosure
