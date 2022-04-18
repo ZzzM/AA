@@ -9,7 +9,7 @@
                 {% unless release.prerelease and page.release_only %}
                     {% if release.body contains '<!--' %}
                     <item>
-                        {% assign name =  release.name }
+                        {% assign name =  release.name %}
                         <title>{{ site.github.tags.name.object.sha }}</title>
                         <description><![CDATA[{{ release.body | markdownify }}]]></description>
                         <pubDate>{{ release.published_at | date_to_rfc822 }}</pubDate>
