@@ -9,7 +9,7 @@
                 {% unless release.prerelease and page.release_only %}
                     {% if release.body contains '<!--' %}
                     <item>
-                        <title>{{ release.name }}</title>
+                        <title>{{ release.node_id }}</title>
                         <description><![CDATA[{{ release.body | markdownify }}]]></description>
                         <pubDate>{{ release.published_at | date_to_rfc822 }}</pubDate>
                         {% for asset in release.assets limit:1 %}
