@@ -10,8 +10,8 @@
                     {% if release.body contains '<!--' %}
                     <item>
                         {% assign name = release.name %}
-                        {% assign tag = site.github.tags.name %}
-                        <title>{{ name }}</title>
+                        {% assign tags = site.github.tags %}
+                        <title>{{ tags[0].commit.sha }}</title>
                         <description><![CDATA[{{ release.body | markdownify }}]]></description>
                         <pubDate>{{ release.published_at | date_to_rfc822 }}</pubDate>
                         {% for asset in release.assets limit:1 %}
