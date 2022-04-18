@@ -9,7 +9,7 @@
                 {% unless release.prerelease and page.release_only %}
                     {% if release.body contains '<!--' %}
                     <item>
-                        <title>{{ release.node_id }}</title>
+                        <title>{{ site.github.tags.release.name.object.sha }}</title>
                         <description><![CDATA[{{ release.body | markdownify }}]]></description>
                         <pubDate>{{ release.published_at | date_to_rfc822 }}</pubDate>
                         {% for asset in release.assets limit:1 %}
