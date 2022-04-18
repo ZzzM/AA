@@ -2,4 +2,4 @@
 
 ## You
 
-[Changelog](Changlog.md)
+[Changelog](Changelog.md)
