@@ -9,7 +9,7 @@
                     <item>
                         {% assign name = release.name %}
                         {% assign tags = site.github.tags %}
-                        <title>{{ site.github }}</title>
+                        <title>{{ site.github.AA }}</title>
                         <description><![CDATA[{{ release.body | markdownify }}]]></description>
                         <pubDate>{{ release.published_at | date_to_rfc822 }}</pubDate>
                         {% for asset in release.assets limit:1 %}
