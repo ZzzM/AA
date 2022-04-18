@@ -15,7 +15,7 @@
                             {% assign arguments =  release.body | split:'<!--' | last | remove: '-->' | strip | jsonify %}
                             <enclosure
                                 url="{{ asset.browser_download_url }}"
-                                sparkle:version="{{ arguments.a | strip }}"
+                                sparkle:version="{{ arguments | strip }}"
                                 sparkle:shortVersionString="{{ release.tag_name }}"
                                 sparkle:edSignature="{{ arguments.b | strip }}"
                                 length="{{ asset.size }}"
