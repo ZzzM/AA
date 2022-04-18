@@ -1,4 +1,7 @@
-## 1.0.2 - 2022-01-12
+# Changelogs
+[Changelogs](https://github.com/ZzzM/AA/blob/main/RELEASES.md)
+
+<!-- ## 1.0.2 - 2022-01-12
 ### Added
 
 - a
@@ -45,3 +48,4 @@
 - `Removed` 已经移除的功能
 - `Fixed` 对bug的修复
 - `Security` 对安全的改进  -->
+ -->
