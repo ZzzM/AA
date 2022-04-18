@@ -7,12 +7,12 @@
                 {% unless release.prerelease and page.release_only %}
                     {% if release.body contains '<!--' %}
                     <item>
-                        {% assign name = release.name %}
+                        {% assign title = release.name %}
                         {% assign content = release.body | split:'<!--' %}
-                        {% assign note = content.first %}
+                        {% assign description = content.first %}
                         {% assign arguments = content.last | remove: '-->' | split:',' %}
-                        <title>{{ name }}</title>
-                        <description><![CDATA[{{ note| strip }}]]></description>
+                        <title>{{ title }}</title>
+                        <description><![CDATA[{{ description | markdownify }}]]></description>
                         <pubDate>{{ release.published_at | date_to_rfc822 }}</pubDate>
                         {% for asset in release.assets limit:1 %}
                             <enclosure
