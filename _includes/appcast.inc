@@ -12,10 +12,10 @@
                         <description><![CDATA[{{ release.body | markdownify }}]]></description>
                         <pubDate>{{ release.published_at | date_to_rfc822 }}</pubDate>
                         {% for asset in release.assets limit:1 %}
-                            {% assign arguments =  release.body | split:'<!--' | last | remove: '-->' | strip | json %}
+                            {% assign arguments =  release.body | split:'<!--' | last | remove: '-->' | strip %}
                             <enclosure
                                 url="{{ asset.browser_download_url }}"
-                                sparkle:version="{{ arguments.a | strip }}"
+                                sparkle:version="{{ arguments['a'] | strip }}"
                                 sparkle:shortVersionString="{{ release.tag_name }}"
                                 sparkle:edSignature="{{ arguments.b | strip }}"
                                 length="{{ asset.size }}"
