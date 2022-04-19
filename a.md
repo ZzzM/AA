@@ -1,7 +1,10 @@
 # Changelogs
 [Changelogs](https://github.com/ZzzM/AA/blob/main/RELEASES.md)
 
-<!-- ## 1.0.2 - 2022-01-12
+<p>
+{% assign foo = "bar" %}
+{{ foo }}
+</p>
 ### Added
 
 - a
