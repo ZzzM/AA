@@ -17,6 +17,7 @@ jobs:
     - name: Package
       run: |
         echo "APP_BUILD=${GITHUB_SHA::7}" >> $GITHUB_ENV
+        echo $APP_BUILD
         fastlane run increment_build_number build_number:$APP_BUILD
         fastlane package
 
