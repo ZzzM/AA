@@ -66,5 +66,5 @@ jobs:
               
 env:
   APP_SCHEME: ${{ secrets.APP_SCHEME }}
-  APP_BUILD: ${{github.sha ::7}}
+  APP_BUILD: ${{github.sha::7}}
   SPARKLE_KEY: ${{ secrets.SPARKLE_KEY }}
