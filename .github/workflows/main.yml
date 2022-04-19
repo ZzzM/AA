@@ -1,3 +1,5 @@
+name: All
+
 on:
   push:
     tags:
@@ -52,7 +54,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       with:
         body_path: CHANGELOG.md
-        files: $APP_SCHEME.dmg
+        files: ${{ APP_SCHEME }}.dmg
  
  
     - name: Rebuild 🚀 
