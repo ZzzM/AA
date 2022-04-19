@@ -1,3 +1,3 @@
 <p>
-  {{ site.github.project_title }}
+  {{ 'a.md' }}
 </p>
