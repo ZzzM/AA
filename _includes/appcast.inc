@@ -10,7 +10,7 @@
                         {% assign title = release.name %}
                         {% assign content = release.body | split:'<!--' %}
                         {% assign description = content.first %}
-                        {% assign arguments = content.last | remove: '-->' | split:',' %}
+                        {% assign arguments = release.body | sparkle_signature %}
                         <title>{{ title }}</title>
                         <description><![CDATA[{{ description | markdownify }}]]></description>
                         <pubDate>{{ release.published_at | date_to_rfc822 }}</pubDate>
