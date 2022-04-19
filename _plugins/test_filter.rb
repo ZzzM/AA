@@ -1,10 +1,11 @@
 module Jekyll
   module SignatureFilter
     def sparkle_signature(release_body)
-      regex = /<!-- (?<signature>.*) -->/m
-      signature = release_body.match(regex).named_captures["signature"]
-      raise "Didn't find a signature in the release body." if signature.empty?
-      signature.split(",")
+#       regex = /<!-- (?<signature>.*) -->/m
+      conetents = release_body.split("<!-- ")
+#       signature = release_body.match(regex).named_captures["signature"]
+#       raise "Didn't find a signature in the release body." if signature.empty?
+      conetents
     end
   end
 end
