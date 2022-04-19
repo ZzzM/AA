@@ -8,7 +8,7 @@
                     {% if release.body contains '<!--' %}
                     <item>
                         {% assign title = release.name %}
-                        {% assign contents = release.body | split:'<!--' %}
+                        {% assign contents = release.body | remove: "-->" | split:'<!--' %}
                         {% assign description = contents.first %}
                         {% assign arguments = contents.last | split:',' %}
                         <title>{{ title }}</title>
