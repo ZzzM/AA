@@ -27,7 +27,6 @@ jobs:
     - name: Create
       run: |
         brew install create-dmg
-        echo $PWD
         create-dmg \
         --volicon AppIcon.icns \
         --hdiutil-quiet \
