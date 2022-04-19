@@ -1,3 +1,3 @@
 <p>
-  {% render "a.md" %}
+  {% include "a.md" %}
 </p>
