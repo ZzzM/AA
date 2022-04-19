@@ -16,11 +16,10 @@ jobs:
       
     - name: Package
       run: |
+        echo "APP_BUILD=$(github.sha::7)" >> $GITHUB_ENV
         fastlane run increment_build_number build_number:$APP_BUILD
         fastlane package
-        echo $PWD
-        ls
- 
+
     - name: Create
       run: |
         brew install create-dmg
@@ -66,5 +65,4 @@ jobs:
               
 env:
   APP_SCHEME: ${{ secrets.APP_SCHEME }}
-  APP_BUILD: ${{github.sha::7}}
   SPARKLE_KEY: ${{ secrets.SPARKLE_KEY }}
