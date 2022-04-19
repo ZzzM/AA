@@ -8,11 +8,11 @@
                     {% if release.body contains '<!--' %}
                     <item>
                         {% assign title = release.name %}
-<!--                         {% assign content = release.body | split:'<!--' %}
-                        {% assign description = content.first %} -->
-                        {% assign arguments = release.body | sparkle_signature %}
+                        {% assign contents = release.body | split:'<!--' %}
+                        {% assign description = contents.first %}
+                        {% assign arguments = contents.last | split:',' %}
                         <title>{{ title }}</title>
-                        <description><![CDATA[{{ release.body | markdownify }}]]></description>
+                        <description><![CDATA[{{ description | markdownify }}]]></description>
                         <pubDate>{{ release.published_at | date_to_rfc822 }}</pubDate>
                         {% for asset in release.assets limit:1 %}
                             <enclosure
