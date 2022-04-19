@@ -16,7 +16,7 @@ jobs:
       
     - name: Package
       run: |
-        fastlane run increment_build_number build_number:${GITHUB_SHA::7}
+        fastlane run increment_build_number build_number:$APP_BUILD
         fastlane package
         echo $PWD
         ls
@@ -34,8 +34,6 @@ jobs:
     - name: Update
       run: | 
  
-       build=`defaults read $PWD/$APP_SCHEME.app/Contents/Info.plist CFBundleVersion`
-       
        signature=`$PWD/sign_update -s $SPARKLE_KEY KAI.dmg`
        signature=${signature%\" *}
        signature=${signature#*=\"}
@@ -44,7 +42,7 @@ jobs:
        changelog=${changelog%%---*}
        changelog=${changelog#*###}
        changelog="###$changelog"
-       content="<!-- $build,$signature -->"
+       content="<!-- $APP_BUILD,$signature -->"
        
        echo "$changelog$content" > CHANGELOG.md
        
@@ -53,21 +51,20 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       with:
         body_path: CHANGELOG.md
-        files: ${{ env.APP_SCHEME }}.dmg
+        files: ${APP_SCHEME}.dmg
  
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@v4.3.0
+ 
+    - name: Rebuild 🚀 
+      uses: actions/github-script@v6
       with:
-        branch: gh-pages # The branch the action should deploy to.
-        folder: .
- 
-#     - name: Appcast
-#       run: |
-#           curl -u ZzzM:$GITPAGE_TOKEN -X POST \
-#           https://api.github.com/repos/${{ github.repository }}/pages/builds \
-#           -H "Accept: application/vnd.github.mister-fantastic-preview+json"
+        github-token: ${{ secrets.PERSONAL_TOKEN }}
+        script: |
+          github.rest.repos.requestPagesBuild({
+            owner: context.repo.owner,
+              repo: context.repo.repo,
+            })
               
 env:
   APP_SCHEME: ${{ secrets.APP_SCHEME }}
-  GITPAGE_TOKEN: ${{ secrets.GITPAGE_TOKEN }}
+  APP_BUILD: ${{github.sha ::7}}
   SPARKLE_KEY: ${{ secrets.SPARKLE_KEY }}
