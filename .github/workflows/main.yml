@@ -14,10 +14,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2.4.0
       
+    - run: |
+        echo "APP_BUILD=${GITHUB_SHA::7}" >> $GITHUB_ENV
+        
     - name: Package
       run: |
-        echo "APP_BUILD=${GITHUB_SHA::7}" >> $GITHUB_ENV
-        echo $APP_BUILD
         fastlane run increment_build_number build_number:$APP_BUILD
         fastlane package
 
@@ -31,7 +32,7 @@ jobs:
         --app-drop-link 0 30  \
         $APP_SCHEME.dmg $APP_SCHEME.app
 
-    - name: Update
+    - name: Changelog
       run: | 
  
        signature=`$PWD/sign_update -s $SPARKLE_KEY KAI.dmg`
