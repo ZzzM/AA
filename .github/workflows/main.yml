@@ -23,8 +23,8 @@ jobs:
         
     - name: Package
       run: |
-        fastlane run increment_version_number version_number:$APP_VERSION
-        fastlane run increment_build_number build_number:$APP_BUILD
+        fastlane run increment_version_number_in_plist version_number:$APP_VERSION
+        fastlane run increment_build_number_in_plist build_number:$APP_BUILD
         fastlane package
 
     - name: Create
