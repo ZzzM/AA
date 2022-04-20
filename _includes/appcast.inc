@@ -9,9 +9,9 @@
                     {% if release.body contains flag %}
                     <item>
                         {% assign title = release.name %}
-                        {% assign contents = release.body | split:flag | strip %}
-                        {% assign description = contents.first %}
-                        {% assign arguments = contents.last | split:',' | strip %}
+                        {% assign contents = release.body | split:flag %}
+                        {% assign description = contents.first | strip %}
+                        {% assign arguments = contents.last | strip %}
                         <title>{{ title }}</title>
                         <description><![CDATA[{{ description | markdownify }}]]></description>
                         <pubDate>{{ release.published_at | date_to_rfc822 }}</pubDate>
