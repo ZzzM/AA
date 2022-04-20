@@ -5,10 +5,11 @@
         {% for release in site.github.releases %}
             {% unless release.draft %}
                 {% unless release.prerelease and page.release_only %}
-                    {% if release.body contains '<!--' %}
+                    {% assign flag = '<?>'}
+                    {% if release.body contains flag %}
                     <item>
                         {% assign title = release.name %}
-                        {% assign contents = release.body | split:'<?>' | strip %}
+                        {% assign contents = release.body | split:flag | strip %}
                         {% assign description = contents.first %}
                         {% assign arguments = contents.last | split:',' | strip %}
                         <title>{{ title }}</title>
