@@ -33,20 +33,24 @@ jobs:
         --app-drop-link 0 30  \
         $APP_SCHEME.dmg $APP_SCHEME.app
 
-    - name: Changelog
+    - name: Changelogs
       run: | 
  
+      
+       build= "<? $APP_BUILD ?>"
+      
        signature=`$PWD/sign_update -s $SPARKLE_KEY KAI.dmg`
        signature=${signature%\" *}
        signature=${signature#*=\"}
+       signature="<? $signature ?>"
        
+     
        changelog=`cat RELEASES.md`
        changelog=${changelog%%---*}
        changelog=${changelog#*###}
        changelog="###$changelog"
-       content="<!-- $APP_BUILD,$signature -->"
        
-       echo "$changelog$content" > CHANGELOG.md
+       echo "$changelog$build$signature" > CHANGELOG.md
        
     - name: Release
       uses: softprops/action-gh-release@v1
