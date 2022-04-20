@@ -8,14 +8,15 @@
                     {% assign flag = '<?>' %}
                     {% if release.body contains flag %}
                     <item>
-                        {% assign title = release.name %}
-                        {% assign contents = release.body | split:flag %}
-                        {% assign description = contents.first | strip %}
-                        {% assign arguments = contents.last | strip %}
-                        <title>{{ title }}</title>
-                        <description><![CDATA[{{ description | markdownify }}]]></description>
+                        <title>{{ release.name }}</title>
                         <pubDate>{{ release.published_at | date_to_rfc822 }}</pubDate>
-                        {{ arguments }}
+                        
+                        {% assign body = release.body | split:flag %}
+                        {% assign description = body.first | strip %}
+                        {% assign enclosure = body.last | strip %}
+                        
+                        <description><![CDATA[{{ description | markdownify }}]]></description>
+                        {{ enclosure }}
                     </item>
                     {% endif %}
                 {% endunless %}
