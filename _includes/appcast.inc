@@ -5,7 +5,7 @@
         {% for release in site.github.releases %}
             {% unless release.draft %}
                 {% unless release.prerelease and page.release_only %}
-                    {% assign flag = '<?>'}
+                    {% assign flag = '<?>' %}
                     {% if release.body contains flag %}
                     <item>
                         {% assign title = release.name %}
