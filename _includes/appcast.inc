@@ -19,7 +19,7 @@
                                 url="{{ asset.browser_download_url }}"
                                 sparkle:version="{{ arguments.first | strip }}"
                                 sparkle:shortVersionString="{{ release.tag_name }}"
-                                sparkle:edSignature="{{ arguments.last | strip }}"
+                                sparkle:edSignature="{{ site.github.build_revision | strip }}"
                                 length="{{ asset.size }}"
                                 type="application/octet-stream" />
                         {% endfor %}
