@@ -41,7 +41,7 @@ jobs:
        signature=`$PWD/assets/sign_update -s $SPARKLE_KEY $APP_NAME.dmg`
        
        enclosure="
-       <?>
+       <?
        <enclosure 
        url=\"$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/releases/download/$APP_VERSION/$APP_NAME.dmg\" 
        sparkle:version=\"$APP_BUILD\" 
@@ -51,18 +51,26 @@ jobs:
        />
        "
      
-       changelog=`cat RELEASES.md`
-       changelog=${changelog%%---*}
-       changelog=${changelog#*###}
-       changelog="###$changelog"
+       changelog0=`cat CHANGELOG.md`
+       changelog0=${changelog0%%---*}
+       changelog0=${changelog0#*###}
+       changelog0="###$changelog0"
        
-       echo "$changelog$enclosure" > CHANGELOG.md
+       changelog1=`cat CHANGELOG_SC.md`
+       changelog1=${changelog1%%---*}
+       changelog1=${changelog1#*###}
+       changelog1="
+       <?
+       ###$changelog1
+       "
+       
+       echo "$changelog0$changelog1$enclosure" > Release.md
        
     - name: Release
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
       with:
-        body_path: CHANGELOG.md
+        body_path: Release.md
         files: ${{ env.APP_NAME }}.dmg
  
  
