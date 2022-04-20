@@ -1,1 +1,2 @@
 gem 'fastlane-plugin-dmg'
+gem 'fastlane-plugin-versioning'
