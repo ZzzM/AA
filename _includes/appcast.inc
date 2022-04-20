@@ -8,20 +8,14 @@
                     {% if release.body contains '<!--' %}
                     <item>
                         {% assign title = release.name %}
-                        {% assign contents = release.body | remove: "-->" | split:'<!--' %}
+                        {% assign contents = release.body | split:'<?>' | strip %}
                         {% assign description = contents.first %}
-                        {% assign arguments = contents.last | split:',' %}
+                        {% assign arguments = contents.last | split:',' | strip %}
                         <title>{{ title }}</title>
                         <description><![CDATA[{{ description | markdownify }}]]></description>
                         <pubDate>{{ release.published_at | date_to_rfc822 }}</pubDate>
                         {% for asset in release.assets limit:1 %}
-                            <enclosure
-                                url="{{ asset.browser_download_url }}"
-                                sparkle:version="{{ arguments.first | strip }}"
-                                sparkle:shortVersionString="{{ release.tag_name }}"
-                                sparkle:edSignature="{{ site.github.build_revision | strip }}"
-                                length="{{ asset.size }}"
-                                type="application/octet-stream" />
+                            {{ arguments }}
                         {% endfor %}
                     </item>
                     {% endif %}
