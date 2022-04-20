@@ -15,9 +15,7 @@
                         <title>{{ title }}</title>
                         <description><![CDATA[{{ description | markdownify }}]]></description>
                         <pubDate>{{ release.published_at | date_to_rfc822 }}</pubDate>
-                        {% for asset in release.assets limit:1 %}
-                            {{ arguments }}
-                        {% endfor %}
+                        {{ arguments }}
                     </item>
                     {% endif %}
                 {% endunless %}
