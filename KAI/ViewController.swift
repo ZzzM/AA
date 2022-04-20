@@ -34,7 +34,7 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         let main = Bundle.main
-        tt.stringValue = (main.shortVersion ?? "version")  + "(" + (main.version ?? "build") + ")" 
+        tt.stringValue = (main.shortVersion ?? "version")  + " - " + (main.version ?? "build")
         // Do any additional setup after loading the view.
     }
 
