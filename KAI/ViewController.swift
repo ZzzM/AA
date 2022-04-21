@@ -39,8 +39,8 @@ class ViewController: NSViewController {
 
         let main = Bundle.main
         tt.stringValue = (main.version ?? "version")
-        + " - " + (main.commit ?? "commit")
-        + " - " + (main.build ?? "build")
+        + "\n" + (main.commit ?? "commit")
+        + "\n" + (main.build ?? "build")
         // Do any additional setup after loading the view.
     }
 
