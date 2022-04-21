@@ -41,7 +41,8 @@ jobs:
         $APP_NAME.dmg $APP_NAME.app
 
     - name: Changelogs
-      run: sh scripts/changelogs.sh
+      run: |
+        sh scripts/changelogs.sh
        
     - name: Release
       uses: softprops/action-gh-release@v1
