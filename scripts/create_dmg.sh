@@ -20,8 +20,8 @@ function sparkle_enclosure() {
 }
 
 function generate_changlog() {
-    echo "$(transform CHANGELOG.md)" > $BODY_PATH
-    echo "$(transform CHANGELOG_SC.md)" >> $BODY_PATH
+    echo "$(transform changelogs/CHANGELOG.md)" > $BODY_PATH
+    echo "$(transform changelogs/CHANGELOG_SC.md)" >> $BODY_PATH
     echo $(sparkle_enclosure) >> $BODY_PATH
 }
 
