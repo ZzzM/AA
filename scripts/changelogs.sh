@@ -22,7 +22,7 @@ function sparkle_enclosure() {
 
 function release_changlogs() {
     local flag="<?"
-    local all = "
+    local all="
     $(transform CHANGELOG.md)
     $flag
     $(transform CHANGELOG_SC.md)
