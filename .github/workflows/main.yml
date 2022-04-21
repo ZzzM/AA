@@ -22,12 +22,12 @@ jobs:
     - name: Setup
       run: |
         echo "APP_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
-        echo "APP_BUILD=${GITHUB_SHA::7}" >> $GITHUB_ENV   
-        
+ 
     - name: Package
       run: |
         fastlane run increment_version_number_in_plist version_number:$APP_VERSION
-        fastlane run increment_build_number_in_plist build_number:$APP_BUILD
+        fastlane run increment_build_number_in_plist build_number:$APP_VERSION
+        fastlane run set_info_plist_value key:CommitSHA value:${GITHUB_SHA::7}
         fastlane package
 
     - name: Create
