@@ -12,12 +12,16 @@ extension Bundle {
         infoDictionary?["CFBundleName"] as? String
     }
 
-    var shortVersion: String? {
+    var version: String? {
         infoDictionary?["CFBundleShortVersionString"] as? String
     }
 
-    var version: String? {
+    var build: String? {
         infoDictionary?["CFBundleVersion"] as? String
+    }
+
+    var commit: String? {
+        infoDictionary?["CommitSHA"] as? String
     }
 
     var humanReadableCopyright: String? {
@@ -34,7 +38,9 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         let main = Bundle.main
-        tt.stringValue = (main.shortVersion ?? "version")  + " - " + (main.version ?? "build")
+        tt.stringValue = (main.version ?? "version")
+        + " - " + (main.commit ?? "commit")
+        + " - " + (main.build ?? "build")
         // Do any additional setup after loading the view.
     }
 

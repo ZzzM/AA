@@ -12,8 +12,7 @@ function sparkle_enclosure() {
     local signature=`$PWD/assets/sign_update -s $SPARKLE_KEY $APP_NAME.dmg`
     local enclosure="<enclosure 
     url=\"$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/releases/download/$APP_VERSION/$APP_NAME.dmg\" 
-    sparkle:version=\"$APP_BUILD\" 
-    sparkle:shortVersionString=\"$APP_VERSION\" 
+    sparkle:version=\"$APP_VERSION\" 
     $signature
     type=\"application/octet-stream\" />"
     echo $enclosure
