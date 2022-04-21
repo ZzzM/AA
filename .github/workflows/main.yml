@@ -7,6 +7,10 @@ on:
   
   workflow_dispatch:
 
+env:
+  APP_NAME: KAI
+  SPARKLE_KEY: ${{ secrets.SPARKLE_KEY }}
+  
 jobs:
 
   Realese:
@@ -16,10 +20,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2.4.0
       
+    - name: Setup
     - run: |
         echo "APP_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
-        echo "APP_BUILD=${GITHUB_SHA::7}" >> $GITHUB_ENV
-              
+        echo "APP_BUILD=${GITHUB_SHA::7}" >> $GITHUB_ENV   
         
     - name: Package
       run: |
@@ -37,35 +41,7 @@ jobs:
         $APP_NAME.dmg $APP_NAME.app
 
     - name: Changelogs
-      run: | 
-      
-       signature=`$PWD/assets/sign_update -s $SPARKLE_KEY $APP_NAME.dmg`
-       
-       enclosure="
-       <?
-       <enclosure 
-       url=\"$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/releases/download/$APP_VERSION/$APP_NAME.dmg\" 
-       sparkle:version=\"$APP_BUILD\" 
-       sparkle:shortVersionString=\"$APP_VERSION\" 
-       $signature
-       type=\"application/octet-stream\" 
-       />
-       "
-     
-       changelog0=`cat CHANGELOG.md`
-       changelog0=${changelog0%%---*}
-       changelog0=${changelog0#*###}
-       changelog0="###$changelog0"
-       
-       changelog1=`cat CHANGELOG_SC.md`
-       changelog1=${changelog1%%---*}
-       changelog1=${changelog1#*###}
-       changelog1="
-       <?
-       ###$changelog1
-       "
-       
-       echo "$changelog0$changelog1$enclosure" > Release.md
+      run: sh scripts/changelogs.sh
        
     - name: Release
       uses: softprops/action-gh-release@v1
@@ -74,8 +50,7 @@ jobs:
         body_path: Release.md
         files: ${{ env.APP_NAME }}.dmg
  
- 
-    - name: Rebuild 🚀 
+    - name: Appcast
       uses: actions/github-script@v6
       with:
         github-token: ${{ secrets.PERSONAL_TOKEN }}
@@ -84,7 +59,3 @@ jobs:
             owner: context.repo.owner,
               repo: context.repo.repo,
             })
-              
-env:
-  APP_NAME: ${{ secrets.APP_SCHEME }}
-  SPARKLE_KEY: ${{ secrets.SPARKLE_KEY }}
