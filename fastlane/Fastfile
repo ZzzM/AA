@@ -11,10 +11,10 @@ platform :mac do
   
   
   private_lane :setup do |options|
+    increment_build_number(build_number: ENV["APP_VERSION"])
+    increment_version_number(version_number: ENV["APP_VERSION"])
     set_info_plist_value(path: "#{ENV["APP_NAME"]}/Info.plist", 
-      key: "CFBundleShortVersionString", value: ENV["APP_VERSION"],
-      key: "CFBundleVersion", value: ENV["APP_VERSION"],
-      key: "CommitSHA", value: options[:commit_sha])
+	key: "CommitSHA", value: options[:commit_sha])
   end
 
 
