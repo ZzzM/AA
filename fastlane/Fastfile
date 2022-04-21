@@ -2,24 +2,30 @@ default_platform(:mac)
 
 platform :mac do
   
-
-  lane :package do
-  
+  lane :package do |options|
+    setup
     build
     clean
 
   end
+  
+  
+  private_lane :setup do |options|
+    set_info_plist_value(path: "#{ENV["APP_NAME"]}/Info.plist", 
+      key: "CFBundleShortVersionString", value: ENV["APP_VERSION"],
+      key: "CFBundleVersion", value: ENV["APP_VERSION"],
+      key: "CommitSHA", value: options[:commit_sha])
+  end
 
 
-  lane :build do
+  private_lane :build do 
     build_app(
       clean: true,
       silent: true,
-      export_method: 'mac-application'
-      )
+      export_method: 'mac-application')
   end
 
-  lane :clean do
+  private_lane :clean do
     sh "rm -vfr ~/Library/Developer/Xcode/Archives/*"
   end
 
