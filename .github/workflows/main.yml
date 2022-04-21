@@ -27,7 +27,7 @@ jobs:
       run: |
         fastlane run increment_version_number_in_plist version_number:$APP_VERSION
         fastlane run increment_build_number_in_plist build_number:$APP_VERSION
-        fastlane run set_info_plist_value path:./Info.plist key:CommitSHA value:${GITHUB_SHA::7}
+        fastlane run set_info_plist_value path:$APP_NAME/Info.plist key:CommitSHA value:${GITHUB_SHA::7}
         fastlane package
 
     - name: Create
