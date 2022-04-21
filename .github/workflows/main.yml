@@ -1,9 +1,5 @@
 name: Venus
 
-env:
-  APP_NAME: KAI
-  SPARKLE_KEY: ${{ secrets.SPARKLE_KEY }}
-  
 on:
   workflow_dispatch:
   push:
@@ -56,3 +52,7 @@ jobs:
             owner: context.repo.owner,
               repo: context.repo.repo,
             })
+
+env:
+  APP_NAME: KAI
+  SPARKLE_KEY: ${{ secrets.SPARKLE_KEY }}
