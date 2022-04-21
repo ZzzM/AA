@@ -9,6 +9,7 @@ on:
 env:
   APP_NAME: KAI
   SPARKLE_KEY: ${{ secrets.SPARKLE_KEY }}
+  BODY_PATH: BODY_PATH.md
   
 jobs:
 
@@ -29,19 +30,13 @@ jobs:
 
     - name: Create
       run: |
-        brew install create-dmg
-        create-dmg \
-        --volicon assets/volicon.icns \
-        --hdiutil-quiet \
-        --app-drop-link 0 30  \
-        $APP_NAME.dmg $APP_NAME.app
-        sh scripts/changelogs.sh
+        sh scripts/create_dmg.sh
        
     - name: Release
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
       with:
-        body_path: Release.md
+        body_path: ${{ env.BODY_PATH }}
         files: ${{ env.APP_NAME }}.dmg
  
     - name: Appcast

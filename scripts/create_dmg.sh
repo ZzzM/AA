@@ -1,4 +1,5 @@
 
+
 function transform() {
     local changelog=`cat $1`
     changelog=${changelog%%---*}
@@ -18,10 +19,20 @@ function sparkle_enclosure() {
     echo $enclosure
 }
 
-function release_changlogs() {
-    echo "$(transform CHANGELOG.md)" > Release.md
-    echo "$(transform CHANGELOG_SC.md)" >> Release.md
-    echo $(sparkle_enclosure) >> Release.md
+function generate_changlog() {
+    echo "$(transform CHANGELOG.md)" > $BODY_PATH
+    echo "$(transform CHANGELOG_SC.md)" >> $BODY_PATH
+    echo $(sparkle_enclosure) >> $BODY_PATH
+}
+
+
+function create_dmg() {
+    brew install create-dmg
+        create-dmg \
+        --volicon assets/volicon.icns \
+        --hdiutil-quiet \
+        --app-drop-link 0 30  \
+        $APP_NAME.dmg $APP_NAME.app
 }
 
 function test() {
@@ -31,5 +42,7 @@ function test() {
 
 }
 # test
-release_changlogs
+create_dmg
+generate_changlog
+
 
