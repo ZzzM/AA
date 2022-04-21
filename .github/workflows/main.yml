@@ -39,9 +39,6 @@ jobs:
         --hdiutil-quiet \
         --app-drop-link 0 30  \
         $APP_NAME.dmg $APP_NAME.app
-
-    - name: Changelogs
-      run: |
         sh scripts/changelogs.sh
        
     - name: Release
