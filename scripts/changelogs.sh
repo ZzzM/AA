@@ -1,3 +1,4 @@
+
 function transform() {
     local changelog=`cat $1`
     changelog=${changelog%%---*}
@@ -17,7 +18,7 @@ function sparkle_enclosure() {
     type=\"application/octet-stream\" 
     />
     "
-    echo $enclosure
+    echo "$enclosure"
 }
 
 function release_changlogs() {
@@ -27,9 +28,9 @@ function release_changlogs() {
     $flag
     $(transform CHANGELOG_SC.md)
     $flag
-    $sparkle_enclosure
+    $(sparkle_enclosure)
     "
-    echo $all > Release.md
+    echo "$all" > Release.md
 }
 
 release_changlogs
