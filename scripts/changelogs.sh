@@ -3,7 +3,8 @@ function transform() {
     local changelog=`cat $1`
     changelog=${changelog%%---*}
     changelog=${changelog#*###}
-    echo "###$changelog"
+    changelog="###$changelog"
+    echo "$changelog<?"
 }
 
 
@@ -22,16 +23,17 @@ function sparkle_enclosure() {
 }
 
 function release_changlogs() {
-    local flag="<?"
-    local all="
-    $(transform CHANGELOG.md)
-    $flag
-    $(transform CHANGELOG_SC.md)
-    $flag
-    $(sparkle_enclosure)
-    "
-    echo "$all" > Release.md
+    echo "$(transform CHANGELOG.md)" > Release.md
+    echo "$(transform CHANGELOG_SC.md)" >> Release.md
+    echo "$(sparkle_enclosure)" >> Release.md
 }
 
+function test() {
+
+    echo "$(transform CHANGELOG.md)" > TEST.md
+    echo "$(transform CHANGELOG_SC.md)" >> TEST.md
+
+}
+# test
 release_changlogs
 
