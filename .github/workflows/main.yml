@@ -1,14 +1,14 @@
 name: Venus
 
+env:
+  APP_NAME: KAI
+  SPARKLE_KEY: ${{ secrets.SPARKLE_KEY }}
+  
 on:
   workflow_dispatch:
   push:
     tags:
       - '*'
-  
-env:
-  APP_NAME: KAI
-  SPARKLE_KEY: ${{ secrets.SPARKLE_KEY }}
   
 jobs:
 
@@ -30,29 +30,29 @@ jobs:
         fastlane run increment_build_number_in_plist build_number:$APP_BUILD
         fastlane package
 
-#     - name: Create
-#       run: |
-#         brew install create-dmg
-#         create-dmg \
-#         --volicon assets/volicon.icns \
-#         --hdiutil-quiet \
-#         --app-drop-link 0 30  \
-#         $APP_NAME.dmg $APP_NAME.app
-#         sh scripts/changelogs.sh
+    - name: Create
+      run: |
+        brew install create-dmg
+        create-dmg \
+        --volicon assets/volicon.icns \
+        --hdiutil-quiet \
+        --app-drop-link 0 30  \
+        $APP_NAME.dmg $APP_NAME.app
+        sh scripts/changelogs.sh
        
-#     - name: Release
-#       uses: softprops/action-gh-release@v1
-#       if: startsWith(github.ref, 'refs/tags/')
-#       with:
-#         body_path: Release.md
-#         files: ${{ env.APP_NAME }}.dmg
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        body_path: Release.md
+        files: ${{ env.APP_NAME }}.dmg
  
-#     - name: Appcast
-#       uses: actions/github-script@v6
-#       with:
-#         github-token: ${{ secrets.PERSONAL_TOKEN }}
-#         script: |
-#           github.rest.repos.requestPagesBuild({
-#             owner: context.repo.owner,
-#               repo: context.repo.repo,
-#             })
+    - name: Appcast
+      uses: actions/github-script@v6
+      with:
+        github-token: ${{ secrets.PERSONAL_TOKEN }}
+        script: |
+          github.rest.repos.requestPagesBuild({
+            owner: context.repo.owner,
+              repo: context.repo.repo,
+            })
