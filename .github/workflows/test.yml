@@ -7,7 +7,7 @@ on:
   
 env:
   
-  TE: ${{ github.sha::7 }}
+  TE: ${{ github }}
 
 jobs:
   # This workflow contains a single job called "build"
