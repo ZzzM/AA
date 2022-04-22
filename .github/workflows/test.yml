@@ -7,7 +7,7 @@ on:
   
 env:
   
-  TE: ${{RUNNER_TEMP}}
+  TE: ${{ env.RUNNER_TEMP }}
 
 jobs:
   # This workflow contains a single job called "build"
