@@ -6,7 +6,8 @@ on:
   workflow_dispatch:
   
 env:
-  TE: ${GITHUB_SHA::7}
+  
+  TE: $RUNNER_TEMP
 
 jobs:
   # This workflow contains a single job called "build"
