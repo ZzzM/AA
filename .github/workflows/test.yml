@@ -22,7 +22,7 @@ jobs:
       
       - name: Run a multi-line script
         run: |
-          echo -n $VV | base64 --decode --output $TT
+          echo -n "$VV" | base64 --decode --output $TT
 
           
       - run: |
