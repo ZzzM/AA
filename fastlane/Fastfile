@@ -13,11 +13,12 @@ platform :mac do
   private_lane :setup do
     commit = last_git_commit
     date = Time.new.strftime("%Y.%m.%d %k:%M")  
-
-    increment_version_number_in_plist(version_number: ENV["APP_VERSION"])
-	  increment_build_number_in_plist(build_number: ENV["APP_VERSION"])
+    version = ENV["APP_VERSION"]
+    path = "#{ENV["APP_NAME"]}/Info.plist"
+    increment_version_number_in_plist(version_number: version)
+	  increment_build_number_in_plist(build_number: version)
     set_info_plist_value(
-      path: "#{ENV["APP_NAME"]}/Info.plist", 
+      path: path, 
       key: "CommitHash", value: commit[:abbreviated_commit_hash],
       key: "CommitDate", value: date)
   end
@@ -34,5 +35,12 @@ platform :mac do
     sh "rm -vfr ~/Library/Developer/Xcode/Archives/*"
   end
 
+  lane :test do
+    commit = last_git_commit
+    date = Time.new.strftime("%Y.%m.%d %k:%M")  
+    path = "KAI/Info.plist"
+    set_info_plist_value(path: path, key: "CommitHash", value: commit[:abbreviated_commit_hash])
+    set_info_plist_value(path: path, key: "CommitDate", value: date)
+  end
 
 end

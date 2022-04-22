@@ -25,7 +25,7 @@ extension Bundle {
     }
 
     var commitDate: String? {
-        infoDictionary?["CommitHash"] as? String
+        infoDictionary?["CommitDate"] as? String
     }
 
     var humanReadableCopyright: String? {
