@@ -5,11 +5,14 @@ name: Test
 on:
   workflow_dispatch:
   
+env:
+  VV: ${{ secrets.VV }}
+  TT: tt
 
 jobs:
-  # This workflow contains a single job called "build"
+
   build:
-    # The type of runner that the job will run on
+
     runs-on: ubuntu-latest
 
 
@@ -19,7 +22,10 @@ jobs:
       
       - name: Run a multi-line script
         run: |
-          echo "APP_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+          l
+          echo -n $VV | base64 --decode --output $TT
+
           
-      - run: echo $APP_VERSION
+      - run: |
+          echo `cat $TT`
           
