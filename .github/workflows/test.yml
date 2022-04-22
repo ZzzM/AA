@@ -5,9 +5,6 @@ name: Test
 on:
   workflow_dispatch:
   
-env:
-  
-  TE: ??
 
 jobs:
   # This workflow contains a single job called "build"
@@ -22,6 +19,5 @@ jobs:
       
       - name: Run a multi-line script
         run: |
-          echo "😄"
-          echo $TE
-          echo "😄"
+          echo "APP_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+          echo $APP_VERSION
