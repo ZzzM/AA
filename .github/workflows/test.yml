@@ -23,5 +23,5 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo "😄"
-          echo $TT
-
+          echo $TE
+          echo "😄"
