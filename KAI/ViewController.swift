@@ -20,8 +20,12 @@ extension Bundle {
         infoDictionary?["CFBundleVersion"] as? String
     }
 
-    var commit: String? {
-        infoDictionary?["CommitSHA"] as? String
+    var commitHash: String? {
+        infoDictionary?["CommitHash"] as? String
+    }
+
+    var commitDate: String? {
+        infoDictionary?["CommitHash"] as? String
     }
 
     var humanReadableCopyright: String? {
@@ -40,7 +44,8 @@ class ViewController: NSViewController {
         let main = Bundle.main
         tt.stringValue = """
                 Version \(main.version ?? "XX")
-                Commit \(main.commit ?? "XX")
+                Hash \(main.commitHash ?? "XX")
+                Date \(main.commitDate ?? "XX")
                 Build \(main.build ?? "XX")
         """
 

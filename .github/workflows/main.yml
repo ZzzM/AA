@@ -26,7 +26,7 @@ jobs:
  
     - name: Package
       run: |
-        fastlane package commit_sha:${GITHUB_SHA::7}
+        fastlane package
 
     - name: Create
       run: |
