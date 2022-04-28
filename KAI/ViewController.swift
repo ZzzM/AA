@@ -44,10 +44,10 @@ class ViewController: NSViewController {
 
         let main = Bundle.main
         tt.stringValue = """
-                Version \(main.version ?? "XX")
-                Hash \(main.commitHash ?? "XX")
-                Date \(main.commitDate ?? "XX")
-                Build \(main.build ?? "XX")
+                Version - \(main.version ?? "XX")
+                Hash - \(main.commitHash ?? "XX")
+                Date - \(main.commitDate ?? "XX")
+                Build - \(main.build ?? "XX")
         """
 
 
