@@ -13,7 +13,7 @@ jobs:
 
   build:
 
-    runs-on: macOS-latest
+    runs-on: macOS-12
 
 
     steps:
@@ -22,9 +22,6 @@ jobs:
       
       - name: Run a multi-line script
         run: |
-          echo -n $VV | base64 --decode --output $TT
+          npm
 
-          
-      - run: |
-          echo `cat $TT`
           
