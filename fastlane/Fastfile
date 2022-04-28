@@ -35,8 +35,8 @@ platform :mac do
   end
 
   lane :test do
-    time = Time.now
-    puts time.inspect
+    build
+    clean
   end
 
 end

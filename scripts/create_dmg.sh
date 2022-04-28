@@ -27,19 +27,18 @@ function generate_changlog() {
 
 
 function create_dmg() {
-    brew install create-dmg
-        create-dmg \
-        --volicon assets/volicon.icns \
-        --hdiutil-quiet \
-        --app-drop-link 0 30  \
-        $APP_NAME.dmg $APP_NAME.app
+    brew install graphicsmagick imagemagick
+    npm install --global create-dmg
+    create-dmg $APP_NAME.app
+    mv $APP_NAME*.dmg $APP_NAME.dmg
 }
 
 function test() {
 
-    echo "$(transform CHANGELOG.md)" > TEST.md
-    echo "$(transform CHANGELOG_SC.md)" >> TEST.md
-
+    # echo "$(transform CHANGELOG.md)" > TEST.md
+    # echo "$(transform CHANGELOG_SC.md)" >> TEST.md
+    create-dmg KAI.app 
+    mv KAI*.dmg KAI.dmg
 }
 # test
 create_dmg

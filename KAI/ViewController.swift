@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import SwiftUI
 
 extension Bundle {
     var bundleName: String? {
@@ -48,6 +49,8 @@ class ViewController: NSViewController {
                 Date \(main.commitDate ?? "XX")
                 Build \(main.build ?? "XX")
         """
+
+
 
         // Do any additional setup after loading the view.
     }
