@@ -27,7 +27,6 @@ function generate_changlog() {
 
 
 function create_dmg() {
-    brew install graphicsmagick imagemagick
     npm install --global create-dmg
     create-dmg $APP_NAME.app
     mv $APP_NAME*.dmg $APP_NAME.dmg
