@@ -26,6 +26,12 @@ platform :mac do
 
 
   private_lane :build do 
+    
+    disable_automatic_code_signing(
+      team_id: "",
+      profile_name: "",
+      code_sign_identity: '')
+    
     build_app(
       clean: true,
       silent: true,
