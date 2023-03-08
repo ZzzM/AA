@@ -29,6 +29,7 @@ platform :mac do
     build_app(
       clean: true,
       silent: true,
+      skip_profile_detection: true,
       export_method: 'mac-application')
   end
 
