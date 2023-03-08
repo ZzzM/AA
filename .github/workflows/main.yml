@@ -22,6 +22,10 @@ jobs:
       
     - name: Setup
       uses: actions/setup-node@v3.6.0
+      
+    - uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: latest
 
     - run: |
         echo "APP_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
