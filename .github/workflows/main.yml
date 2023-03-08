@@ -26,14 +26,9 @@ jobs:
     - run: |
         echo "APP_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
  
-#     - name: Package
-#       run: |
-#         fastlane package
-        
-    - name: Xcode Staple
-      uses: devbotsxyz/xcode-staple@v1.0.0
-      with:
-        product-path: "KAI.app"
+    - name: Package
+      run: |
+        fastlane package
 
     - name: Create
       run: |
