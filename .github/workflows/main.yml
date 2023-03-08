@@ -32,6 +32,8 @@ jobs:
         
     - name: Xcode Staple
       uses: devbotsxyz/xcode-staple@v1.0.0
+      with:
+        product-path: ${{ env.APP_NAME }}.app
 
     - name: Create
       run: |
