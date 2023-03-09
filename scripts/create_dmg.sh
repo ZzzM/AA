@@ -32,14 +32,7 @@ function create_dmg() {
     mv $APP_NAME*.dmg $APP_NAME.dmg
 }
 
-function test() {
 
-    # echo "$(transform CHANGELOG.md)" > TEST.md
-    # echo "$(transform CHANGELOG_SC.md)" >> TEST.md
-    create-dmg KAI.app 
-    mv KAI*.dmg KAI.dmg
-}
-# test
 create_dmg
 generate_changlog
 
