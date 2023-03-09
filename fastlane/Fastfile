@@ -26,8 +26,13 @@ platform :mac do
       api_token: token,
       name: tag,
       tag_name: tag,
-      description: (File.read("TEST.md") rescue "No changelog provided"),
+      description: (File.read("../TEST.md") rescue "No changelog provided"),
       upload_assets: ["#{name}.dmg"])
+  end
+
+  lane :show do
+    msg = File.read("../TEST.md")
+    UI.message msg
   end
 
   private_lane :setup do |options| 

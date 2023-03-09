@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CommitDate</key>
-	<string>2023.03.09 12:40</string>
+	<string>2023.03.09 13:41</string>
 	<key>CommitHash</key>
-	<string>a508fa3</string>
+	<string>d7c793b</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
