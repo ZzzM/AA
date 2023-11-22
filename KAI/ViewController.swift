@@ -48,7 +48,7 @@ class ViewController: NSViewController {
                 Hash - \(main.commitHash ?? "XX")
                 Date - \(main.commitDate ?? "XX")
                 Build - \(main.build ?? "XX")
-                ??
+                111
         """
 
 
