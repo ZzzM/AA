@@ -56,7 +56,7 @@ platform :mac do
     build_app(
       clean: true,
       silent: true,
-      xcargs: 'CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM='
+      xcargs: 'CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM=',
       export_method: 'mac-application')
   end
 
