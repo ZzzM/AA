@@ -93,3 +93,6 @@ iOSInjectionProject/
 
 TEST.md
 scripts/test.sh
+*.app
+Step.md
+*.dmg
