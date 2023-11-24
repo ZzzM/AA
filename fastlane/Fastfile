@@ -52,12 +52,12 @@ platform :mac do
   end
 
   private_lane :build do 
-    
-    build_app(
+
+    build_mac_app(
       clean: true,
       silent: true,
-      xcargs: 'CODE_SIGN_STYLE= DEVELOPMENT_TEAM=',
       export_method: 'mac-application')
+      
   end
 
   private_lane :clean do
