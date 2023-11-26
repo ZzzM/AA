@@ -23,6 +23,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 
 
+### mac create
+
+```sh
+[bundle exec] fastlane mac create
+```
+
+
+
 ### mac test
 
 ```sh

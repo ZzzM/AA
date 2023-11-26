@@ -6,18 +6,20 @@ platform :mac do
     ENV["APP_NAME"] = "KAI"
     ENV["APP_VERSION"] = last_git_tag
     ENV["SYS_MIN_VERSION"] = "13.1.0"
+    ENV["BUILD_PATH"] = "./build"
   end
 
   lane :package do
-    setup(name: ENV["APP_NAME"], version: ENV["APP_VERSION"])
+    setup
     build
     clean
+    sh "cd .. && zsh ./scripts/release.sh"
   end
 
-  private_lane :setup do |options| 
+  private_lane :setup do
 
-    name = options[:name]
-    version = options[:version]
+    name = ENV["APP_NAME"]
+    version = ENV["APP_VERSION"]
 
     commit = last_git_commit
     date = Time.now.utc.localtime("+08:00").strftime("%Y.%m.%d %k:%M")  
@@ -35,7 +37,8 @@ platform :mac do
     build_mac_app(
       clean: true,
       silent: true,
-      export_method: 'mac-application')
+      export_method: "mac-application",
+      output_directory: ENV["BUILD_PATH"])
       
   end
 
@@ -44,13 +47,32 @@ platform :mac do
   end
 
 
+
   # TEST
   lane :test do |options|
-    setup(name: options[:name], version: options[:version])
+    setup
     build
     clean
+    sh "cd .. && zsh ./scripts/test.sh"
   end
   
+  lane :release do |options|
+
+    name = ENV["APP_NAME"]
+    tag = ENV["APP_VERSION"]
+
+    repo = options[:repo]
+    token = options[:token]
+
+    github_release = set_github_release(
+      repository_name: repo,
+      api_token: token,
+      name: tag,
+      tag_name: tag,
+      description: (File.read("../TEST.md") rescue "No changelog provided"),
+      upload_assets: ["#{name}.dmg"])
+
+  end
 
   lane :show do
     # msg = File.read("../TEST.md")
