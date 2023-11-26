@@ -2,37 +2,16 @@ default_platform(:mac)
 
 platform :mac do
   
+  before_all do
+    ENV["APP_NAME"] = "KAI"
+    ENV["APP_VERSION"] = last_git_tag
+    ENV["SYS_MIN_VERSION"] = "13.1.0"
+  end
+
   lane :package do
     setup(name: ENV["APP_NAME"], version: ENV["APP_VERSION"])
     build
     clean
-  end
-
-  lane :test do |options|
-    setup(name: options[:name], version: options[:version])
-    build
-    clean
-  end
-  
-  lane :release do |options|
-
-    name = options[:name]
-    repo = options[:repo]
-    tag = options[:tag]
-    token = options[:token]
-
-    github_release = set_github_release(
-      repository_name: repo,
-      api_token: token,
-      name: tag,
-      tag_name: tag,
-      description: (File.read("../TEST.md") rescue "No changelog provided"),
-      upload_assets: ["#{name}.dmg"])
-  end
-
-  lane :show do
-    msg = File.read("../TEST.md")
-    UI.message msg
   end
 
   private_lane :setup do |options| 
@@ -65,4 +44,17 @@ platform :mac do
   end
 
 
+  # TEST
+  lane :test do |options|
+    setup(name: options[:name], version: options[:version])
+    build
+    clean
+  end
+  
+
+  lane :show do
+    # msg = File.read("../TEST.md")
+    UI.message ENV["APP_NAME"]
+    UI.message ENV["APP_VERSION"]
+  end
 end
