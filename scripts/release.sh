@@ -25,6 +25,7 @@ function __sparkle_enclosure() {
 function create_dmg() {
     cd $BUILD_PATH
     if [ -f "$APP_NAME.app.dSYM.zip" ]; then
+    brew install graphicsmagick imagemagick
     npm install --global create-dmg
     create-dmg $APP_NAME.app
     mv $APP_NAME*.dmg $APP_NAME.dmg
