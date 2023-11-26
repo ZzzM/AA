@@ -7,54 +7,49 @@ on:
 #       - '*'
       
 env:
-  APP_NAME: KAI
   SPARKLE_KEY: ${{ secrets.SPARKLE_KEY }}
+  PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
   BODY_PATH: BODY_PATH.md
   
 jobs:
 
-  build:
+  build-deploy:
     runs-on: macos-13
     steps:
 
     - name: Checkout
-      uses: actions/checkout@v3.3.0
+      uses: actions/checkout@v4.1.1
       
-    - name: Setup
-      uses: actions/setup-node@v3.6.0
+    - name: Setup Node
+      uses: actions/setup-node@v4.0.0
       
-    - name: Setup Xcode version
+    - name: Setup Xcode
       uses: maxim-lobanov/setup-xcode@v1.6.0
-      with:
-        xcode-version: 14.1
 
-    - run: |
-        echo "APP_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
- 
     - name: Package
       run: |
         fastlane package
 
-    - name: Create
-      run: |
-        sh scripts/create_dmg.sh
+    # - name: Create
+    #   run: |
+    #     sh scripts/create_dmg.sh
        
-    - name: Release
-      uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
-      with:
-        body_path: ${{ env.BODY_PATH }}
-        files: ${{ env.APP_NAME }}.dmg
+    # - name: Release
+    #   uses: softprops/action-gh-release@v1
+    #   if: startsWith(github.ref, 'refs/tags/')
+    #   with:
+    #     body_path: ${{ env.BODY_PATH }}
+    #     files: ${{ env.APP_NAME }}.dmg
  
-    - name: Appcast
-      uses: actions/github-script@v6
-      if: startsWith(github.ref, 'refs/tags/')
-      with:
-        github-token: ${{ secrets.PERSONAL_TOKEN }}
-        script: |
-          github.rest.repos.requestPagesBuild({
-            owner: context.repo.owner,
-              repo: context.repo.repo,
-            })
+    # - name: Appcast
+    #   uses: actions/github-script@v7.0.1
+    #   if: startsWith(github.ref, 'refs/tags/')
+    #   with:
+    #     github-token: ${{ secrets.PERSONAL_TOKEN }}
+    #     script: |
+    #       github.rest.repos.requestPagesBuild({
+    #         owner: context.repo.owner,
+    #           repo: context.repo.repo,
+    #         })
 
 
