@@ -28,6 +28,7 @@ jobs:
     - name: Package
       run: |
         fastlane package
+        cd build && ls
 
     - name: Release
       uses: softprops/action-gh-release@v1
