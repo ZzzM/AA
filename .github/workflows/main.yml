@@ -35,26 +35,26 @@ jobs:
       run: |
         fastlane package
 
-    - name: Create
-      run: |
-        sh scripts/create_dmg.sh
+    # - name: Create
+    #   run: |
+    #     sh scripts/create_dmg.sh
        
-    - name: Release
-      uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
-      with:
-        body_path: ${{ env.BODY_PATH }}
-        files: ${{ env.APP_NAME }}.dmg
+    # - name: Release
+    #   uses: softprops/action-gh-release@v1
+    #   if: startsWith(github.ref, 'refs/tags/')
+    #   with:
+    #     body_path: ${{ env.BODY_PATH }}
+    #     files: ${{ env.APP_NAME }}.dmg
  
-    - name: Appcast
-      uses: actions/github-script@v6
-      if: startsWith(github.ref, 'refs/tags/')
-      with:
-        github-token: ${{ secrets.PERSONAL_TOKEN }}
-        script: |
-          github.rest.repos.requestPagesBuild({
-            owner: context.repo.owner,
-              repo: context.repo.repo,
-            })
+    # - name: Appcast
+    #   uses: actions/github-script@v6
+    #   if: startsWith(github.ref, 'refs/tags/')
+    #   with:
+    #     github-token: ${{ secrets.PERSONAL_TOKEN }}
+    #     script: |
+    #       github.rest.repos.requestPagesBuild({
+    #         owner: context.repo.owner,
+    #           repo: context.repo.repo,
+    #         })
 
 
