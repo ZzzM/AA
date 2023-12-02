@@ -1,9 +1,3 @@
-function release() {
-
-    create_dmg
-    generate_changlog
-    
-}
 
 function __transform() {
     local changelog=`cat $1`
@@ -44,6 +38,5 @@ function generate_changlog() {
     echo $(__sparkle_enclosure) >> $log_path
 }
 
-
-
-release
+create_dmg
+generate_changlog

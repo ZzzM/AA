@@ -25,9 +25,9 @@ jobs:
     - name: Setup Xcode
       uses: maxim-lobanov/setup-xcode@v1.6.0
 
-    - name: Package
+    - name: Create DMG
       run: |
-        fastlane package
+        fastlane create_dmg
 
     - name: Release
       uses: softprops/action-gh-release@v1

@@ -9,11 +9,11 @@ platform :mac do
     ENV["BUILD_PATH"] = "./build"
   end
 
-  lane :release do
+  lane :create_dmg do
     setup
     build
     clean
-    sh "cd .. && zsh ./scripts/release.sh"
+    sh "cd .. && zsh ./scripts/create_dmg.sh"
   end
 
   private_lane :setup do
