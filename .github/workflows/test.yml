@@ -4,7 +4,10 @@ name: Test
 on:
   
   workflow_dispatch:
-
+  
+env:
+  BARK_KEY: ${{ secrets.BARK_KEY }}
+  BARK_HOST: ${{ secrets.BARK_HOST }}
 
 jobs:
 
@@ -20,22 +23,13 @@ jobs:
         run: |
           echo Hello
 
-      - if: success() || failure()
-        env:
-          JOB_CONTEXT: ${{ toJson(job) }}
-          STEPS_CONTEXT: ${{ toJson(steps) }}
-        run: |
-          echo "$GITHUB_CONTEXT"
-          echo "$JOB_CONTEXT"
-          echo "$STEPS_CONTEXT"
-          echo "$RUNNER_CONTEXT"
 
-      - name: notify
-        if: success() || failure()
+      - name: Bark
         uses: monlor/bark-action@v3
+        if: success() || failure()
         with:
-          key: ${{ secrets.BARK_KEY }}
-          host: ${{ secrets.BARK_HOST }}
-          title: ${{ github.repository	}}
+          key: ${{ env.BARK_KEY }}
+          host: ${{ env.BARK_HOST }}
+          title: ${{ env.BARK_KEY }}${{ env.BARK_HOST }}
           body: ${{ job.status }}
           icon: https://raw.githubusercontent.com/ZzzM/AA/main/KAI/Assets.xcassets/AppIcon.appiconset/icon_128x128.png
