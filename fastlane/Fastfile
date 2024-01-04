@@ -10,10 +10,11 @@ platform :mac do
   end
 
   lane :create_dmg do
-    setup
-    build
-    clean
-    sh "cd .. && zsh ./scripts/create_dmg.sh"
+    # setup
+    # build
+    # clean
+    # sh "cd .. && zsh ./scripts/create_dmg.sh"
+    sh "exit 1"
   end
 
   private_lane :setup do
@@ -45,7 +46,6 @@ platform :mac do
   private_lane :clean do
     sh "rm -vfr ~/Library/Developer/Xcode/Archives/*"
   end
-
 
 
   # TEST
