@@ -19,17 +19,11 @@ jobs:
         run: |
           echo Hello
 
-      - name: success
-        if: success()
+      - name: notify
+        if: success() || failure()
         uses: shink/bark-action@v2
         with:
           key: ${{ secrets.BARK_KEY }}
           host: ${{ secrets.BARK_HOST }}
-          title: "AA"
-          body: "Success"
-
-          
-      - name: failure
-        if: failure()
-        run: |
-          echo "failure"
+          title: $GITHUB_REPOSITORY
+          body: ${{ jobs.status }}
