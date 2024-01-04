@@ -21,9 +21,12 @@ jobs:
 
       - name: notify
         if: success() || failure()
-        uses: shink/bark-action@v2
+        uses: monlor/bark-action@v3
         with:
           key: ${{ secrets.BARK_KEY }}
           host: ${{ secrets.BARK_HOST }}
-          title: $GITHUB_REPOSITORY
-          body: ${{ job.status	 }}
+          title: ${{ github.repository	}}
+          body: ${{ job.status }}
+          sound: alarm
+          isArchive: 1
+          icon: https://raw.githubusercontent.com/ZzzM/AA/main/KAI/Assets.xcassets/AppIcon.appiconset/icon_32x32%402x.png
