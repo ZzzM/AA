@@ -28,6 +28,4 @@ jobs:
           host: ${{ secrets.BARK_HOST }}
           title: ${{ github.repository	}}
           body: ${{ job.status }}
-          sound: alarm
-          isArchive: 1
-          icon: https://raw.githubusercontent.com/ZzzM/AA/main/KAI/Assets.xcassets/AppIcon.appiconset/icon_32x32.png
+          icon: https://raw.githubusercontent.com/ZzzM/AA/main/KAI/Assets.xcassets/AppIcon.appiconset/icon_128x128.png
