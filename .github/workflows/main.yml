@@ -56,7 +56,7 @@ jobs:
       with:
         key: ${{ env.BARK_KEY }}
         host: ${{ env.BARK_HOST }}
-        title: ${{ env.APP_VERSION }} - ${{ env.APP_NAME }}
+        title: ${{ env.APP_NAME }} - ${{ env.APP_VERSION }}
         body: ${{ job.status }}
         icon: ${{ env.BARK_ICON }}
         sound: alarm
