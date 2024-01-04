@@ -10,17 +10,10 @@ platform :mac do
   end
 
   lane :create_dmg do
-    # setup
-    # build
-    # clean
-    # sh "cd .. && zsh ./scripts/create_dmg.sh"
-    name = ENV["APP_NAME"]
-    version = ENV["APP_VERSION"]
-
-    ENV["GITHUB_ENV"] = "APP_NAME=$version"
-    ENV["GITHUB_ENV"] = "APP_VERSION=$version"
-
-    sh "exit 1"
+    setup
+    build
+    clean
+    sh "cd .. && zsh ./scripts/create_dmg.sh"
   end
 
   private_lane :setup do
@@ -36,9 +29,6 @@ platform :mac do
     increment_build_number_in_xcodeproj(build_number: version, scheme: name)
     set_info_plist_value(path: path, key: "CommitHash", value: commit[:abbreviated_commit_hash])
     set_info_plist_value(path: path, key: "CommitDate", value: date)
-  
-    sh("echo APP_NAME=#{name} >> $GITHUB_ENV")
-    sh("echo APP_VERSION=#{version} >> $GITHUB_ENV")
 
   end
 
