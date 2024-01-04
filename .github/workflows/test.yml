@@ -11,21 +11,19 @@ jobs:
   df:
     runs-on: macos-13
     steps:
-      - name: x1
+      - id: x1
         run: |
          echo 123
          exit 1
 
-      - name: x2
+      - id: x2
         run: |
           echo Hello
 
       - if: success() || failure()
         env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
           JOB_CONTEXT: ${{ toJson(job) }}
           STEPS_CONTEXT: ${{ toJson(steps) }}
-          RUNNER_CONTEXT: ${{ toJson(runner) }}
         run: |
           echo "$GITHUB_CONTEXT"
           echo "$JOB_CONTEXT"
