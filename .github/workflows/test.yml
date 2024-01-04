@@ -20,6 +20,18 @@ jobs:
         run: |
           echo Hello
 
+      - if: success() || failure()
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+          JOB_CONTEXT: ${{ toJson(job) }}
+          STEPS_CONTEXT: ${{ toJson(steps) }}
+          RUNNER_CONTEXT: ${{ toJson(runner) }}
+        run: |
+          echo "$GITHUB_CONTEXT"
+          echo "$JOB_CONTEXT"
+          echo "$STEPS_CONTEXT"
+          echo "$RUNNER_CONTEXT"
+
       - name: notify
         if: success() || failure()
         uses: monlor/bark-action@v3
