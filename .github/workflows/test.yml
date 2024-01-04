@@ -30,8 +30,8 @@ jobs:
         with:
           key: ${{ env.BARK_KEY }}
           host: ${{ env.BARK_HOST }}
-          title: ${{ env.BARK_KEY }}${{ env.BARK_HOST }}
-          body: ${{ env.BARK_KEY }}${{ env.BARK_HOST }}
+          title: ${{ env.BARK_KEY }} - ${{ env.BARK_HOST }}
+          body: ${{ job.status }}
           icon: https://raw.githubusercontent.com/ZzzM/AA/main/KAI/Assets.xcassets/AppIcon.appiconset/icon_128x128.png
           sound: alarm
           isArchive: 1
