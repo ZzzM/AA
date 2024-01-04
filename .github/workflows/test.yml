@@ -14,6 +14,7 @@ jobs:
       - name: x1
         run: |
          echo 123
+         exit 1
 
       - name: x2
         run: |
@@ -29,4 +30,4 @@ jobs:
           body: ${{ job.status }}
           sound: alarm
           isArchive: 1
-          icon: https://raw.githubusercontent.com/ZzzM/AA/main/KAI/Assets.xcassets/AppIcon.appiconset/icon_32x32%402x.png
+          icon: https://raw.githubusercontent.com/ZzzM/AA/main/KAI/Assets.xcassets/AppIcon.appiconset/icon_32x32.png
