@@ -26,4 +26,4 @@ jobs:
           key: ${{ secrets.BARK_KEY }}
           host: ${{ secrets.BARK_HOST }}
           title: $GITHUB_REPOSITORY
-          body: ${{ jobs.status }}
+          body: ${{ job.status	 }}
