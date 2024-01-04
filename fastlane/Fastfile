@@ -17,7 +17,7 @@ platform :mac do
     name = ENV["APP_NAME"]
     version = ENV["APP_VERSION"]
 
-    ENV["GITHUB_ENV"] = "APP_NAME=$name"
+    ENV["GITHUB_ENV"] = "APP_NAME=$version"
     ENV["GITHUB_ENV"] = "APP_VERSION=$version"
 
     sh "exit 1"
