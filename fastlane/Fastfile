@@ -14,11 +14,12 @@ platform :mac do
     # build
     # clean
     # sh "cd .. && zsh ./scripts/create_dmg.sh"
-    
     name = ENV["APP_NAME"]
     version = ENV["APP_VERSION"]
-    sh("echo APP_NAME=#{name} >> $GITHUB_ENV")
-    sh("echo APP_VERSION=#{version} >> $GITHUB_ENV")
+
+    ENV["GITHUB_ENV"] = "APP_NAME=$name"
+    ENV["GITHUB_ENV"] = "APP_VERSION=$version"
+
     sh "exit 1"
   end
 
@@ -26,9 +27,6 @@ platform :mac do
 
     name = ENV["APP_NAME"]
     version = ENV["APP_VERSION"]
-
-    sh("echo APP_NAME=#{name} >> $GITHUB_ENV")
-    sh("echo APP_VERSION=#{version} >> $GITHUB_ENV")
 
     commit = last_git_commit
     date = Time.now.utc.localtime("+08:00").strftime("%Y.%m.%d %k:%M")  
@@ -39,6 +37,9 @@ platform :mac do
     set_info_plist_value(path: path, key: "CommitHash", value: commit[:abbreviated_commit_hash])
     set_info_plist_value(path: path, key: "CommitDate", value: date)
   
+    sh("echo APP_NAME=#{name} >> $GITHUB_ENV")
+    sh("echo APP_VERSION=#{version} >> $GITHUB_ENV")
+
   end
 
   private_lane :build do 
