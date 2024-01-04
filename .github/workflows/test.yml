@@ -14,24 +14,32 @@ jobs:
   df:
     runs-on: macos-13
     steps:
-      - id: x1
-        run: |
-         echo 123
-         exit 1
-
-      - id: x2
-        run: |
-          echo Hello
 
 
-      - name: Bark
-        uses: monlor/bark-action@v3
-        if: success() || failure()
-        with:
-          key: ${{ env.BARK_KEY }}
-          host: ${{ env.BARK_HOST }}
-          title: KAI
-          body: ${{ job.status }}
-          icon: https://raw.githubusercontent.com/ZzzM/AA/main/KAI/Assets.xcassets/AppIcon.appiconset/icon_128x128.png
-          sound: alarm
-          isArchive: 1
+    - name: GitHub Tag Name example
+      run: |
+         echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME"
+         echo "Tag name from github.ref_name: ${{  github.ref_name }}"
+         
+      # - id: x1
+      #   run: |
+      #    echo 123
+      #    exit 1
+
+      # - id: x2
+      #   run: |
+      #     echo Hello
+
+  
+
+      # - name: Bark
+      #   uses: monlor/bark-action@v3
+      #   if: success() || failure()
+      #   with:
+      #     key: ${{ env.BARK_KEY }}
+      #     host: ${{ env.BARK_HOST }}
+      #     title: KAI
+      #     body: ${{ job.status }}
+      #     icon: https://raw.githubusercontent.com/ZzzM/AA/main/KAI/Assets.xcassets/AppIcon.appiconset/icon_128x128.png
+      #     sound: alarm
+      #     isArchive: 1
