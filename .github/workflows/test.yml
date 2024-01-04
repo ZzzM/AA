@@ -21,8 +21,12 @@ jobs:
 
       - name: success
         if: success()
-        run: |
-          echo "success"
+        uses: harryzcy/action-bark@v2.0.2
+        with:
+          status: ${{ job.status }}
+          device_key: ${{ secrets.BARK_DEVICE_KEY }}
+          bark_server_url: ${{ secrets.BARK_SERVER_URL }}
+
           
       - name: failure
         if: failure()
