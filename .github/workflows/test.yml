@@ -4,3 +4,28 @@ name: Test
 on:
   
   workflow_dispatch:
+
+
+jobs:
+
+  df:
+    runs-on: macos-13
+    steps:
+      - name: x1
+        run: |
+         echo 123
+         exit 1
+
+      - name: x2
+        run: |
+          echo Hello
+
+      - name: success
+        if: success()
+        run: |
+          echo "success"
+          
+      - name: failure
+        if: failure()
+        run: |
+          echo "failure"
