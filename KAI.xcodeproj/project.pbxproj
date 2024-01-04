@@ -15,9 +15,24 @@
 		98D2479B2785814E00F2B278 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 98D2479A2785814E00F2B278 /* Sparkle */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		98C7597E2B2507F000ED4AE4 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9803EC5228104E3500198211 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		9803EC5428104E6C00198211 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		98C7596C2B2507EE00ED4AE4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		98C7596E2B2507EF00ED4AE4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		98D24775277EFFF300F2B278 /* KAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98D24778277EFFF300F2B278 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98D2477A277EFFF300F2B278 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,10 +55,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		98C7596B2B2507EE00ED4AE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98C7596C2B2507EE00ED4AE4 /* WidgetKit.framework */,
+				98C7596E2B2507EF00ED4AE4 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		98D2476C277EFFF300F2B278 = {
 			isa = PBXGroup;
 			children = (
 				98D24777277EFFF300F2B278 /* KAI */,
+				98C7596B2B2507EE00ED4AE4 /* Frameworks */,
 				98D24776277EFFF300F2B278 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,6 +105,7 @@
 				98D24772277EFFF300F2B278 /* Frameworks */,
 				98D24773277EFFF300F2B278 /* Resources */,
 				980E470C29B8F23F00036309 /* ShellScript */,
+				98C7597E2B2507F000ED4AE4 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -101,7 +127,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					98D24774277EFFF300F2B278 = {
@@ -317,6 +343,7 @@
 		98D24785277EFFF500F2B278 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = KAI/KAI.entitlements;
@@ -347,6 +374,7 @@
 		98D24786277EFFF500F2B278 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = KAI/KAI.entitlements;

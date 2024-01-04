@@ -1,4 +1,3 @@
-
 function __transform() {
     local changelog=`cat $1`
     changelog=${changelog%%---*}
