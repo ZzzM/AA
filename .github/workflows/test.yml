@@ -21,11 +21,12 @@ jobs:
 
       - name: success
         if: success()
-        uses: harryzcy/action-bark@v2.0.2
+        uses: shink/bark-action@v2
         with:
-          status: ${{ job.status }}
-          device_key: ${{ secrets.BARK_DEVICE_KEY }}
-          bark_server_url: ${{ secrets.BARK_SERVER_URL }}
+          key: ${{ secrets.BARK_KEY }}
+          host: ${{ secrets.BARK_HOST }}
+          title: "AA"
+          body: "Success"
 
           
       - name: failure
