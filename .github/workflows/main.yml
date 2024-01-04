@@ -9,6 +9,9 @@ on:
 env:
   SPARKLE_KEY: ${{ secrets.SPARKLE_KEY }}
   PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+  BARK_KEY: ${{ secrets.BARK_KEY }}
+  BARK_HOST: ${{ secrets.BARK_HOST }}
+  BARK_ICON: https://raw.githubusercontent.com/ZzzM/AA/main/KAI/Assets.xcassets/AppIcon.appiconset/icon_128x128.png
   
 jobs:
 
@@ -46,3 +49,16 @@ jobs:
             owner: context.repo.owner,
               repo: context.repo.repo,
             })
+
+    - name: Bark
+      uses: monlor/bark-action@v3
+      if: success() || failure()
+      with:
+        key: ${{ env.BARK_KEY }}
+        host: ${{ env.BARK_HOST }}
+        title: ${{ env.APP_NAME }} - ${{ env.APP_VERSION }}
+        body: ${{ job.status }}
+        icon: ${{ env.BARK_ICON }}
+        sound: alarm
+        isArchive: 1
+
