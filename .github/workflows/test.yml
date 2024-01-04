@@ -14,7 +14,6 @@ jobs:
       - name: x1
         run: |
          echo 123
-         exit 1
 
       - name: x2
         run: |
