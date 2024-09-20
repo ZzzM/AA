@@ -7,6 +7,8 @@ platform :mac do
     ENV["APP_VERSION"] = last_git_tag
     ENV["SYS_MIN_VERSION"] = "12.0"
     ENV["BUILD_PATH"] = "./build"
+    ENV["LOG_PATH"] = ENV["BUILD_PATH"] + "/TMP.md"
+    ENV["DMG_PATH"] = ENV["BUILD_PATH"] + "/#{ENV["APP_NAME"]}.dmg"
   end
 
   lane :create_dmg do
@@ -77,23 +79,24 @@ platform :mac do
 
     name = ENV["APP_NAME"]
     tag = ENV["APP_VERSION"]
-    build_path = ENV["BUILD_PATH"]
 
     repo = options[:repo]
     token = options[:token]
 
-    github_release = set_github_release(
+    log_path = "../" + ENV["LOG_PATH"]
+    dmg_path = ENV["DMG_PATH"] 
+
+    set_github_release(
       repository_name: repo,
       api_token: token,
       name: tag,
       tag_name: tag,
-      description: (File.read("#{build_path}/TMP.md") rescue "No changelog provided"),
-      upload_assets: ["#{build_path}/#{name}.dmg"])
+      description: (File.read(log_path) rescue "No changelog provided"),
+      upload_assets: [dmg_path])
       
   end
 
   lane :show do
-    UI.message ENV["APP_NAME"]
-    UI.message ENV["APP_VERSION"]
+ 
   end
 end
