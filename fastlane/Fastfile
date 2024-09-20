@@ -37,8 +37,7 @@ platform :mac do
       clean: true,
       silent: true,
       export_method: "mac-application",
-      output_directory: ENV["BUILD_PATH"],
-      xcargs: "CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM=")
+      output_directory: ENV["BUILD_PATH"])
       
   end
 
@@ -74,23 +73,23 @@ platform :mac do
     sh "cd .. && zsh ./scripts/test.sh"
   end
   
-  # lane :release do |options|
+  lane :release do |options|
 
-  #   name = ENV["APP_NAME"]
-  #   tag = ENV["APP_VERSION"]
+    name = ENV["APP_NAME"]
+    tag = ENV["APP_VERSION"]
 
-  #   repo = options[:repo]
-  #   token = options[:token]
+    repo = options[:repo]
+    token = options[:token]
 
-  #   github_release = set_github_release(
-  #     repository_name: repo,
-  #     api_token: token,
-  #     name: tag,
-  #     tag_name: tag,
-  #     description: (File.read("../TEST.md") rescue "No changelog provided"),
-  #     upload_assets: ["#{name}.dmg"])
+    github_release = set_github_release(
+      repository_name: repo,
+      api_token: token,
+      name: tag,
+      tag_name: tag,
+      description: (File.read("../TEST.md") rescue "No changelog provided"),
+      upload_assets: ["#{name}.dmg"])
       
-  # end
+  end
 
   lane :show do
     # msg = File.read("../TEST.md")
