@@ -23,14 +23,6 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 
 
-### mac build
-
-```sh
-[bundle exec] fastlane mac build
-```
-
-
-
 ### mac fly
 
 ```sh
@@ -43,6 +35,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ```sh
 [bundle exec] fastlane mac test
+```
+
+
+
+### mac release
+
+```sh
+[bundle exec] fastlane mac release
 ```
 
 
