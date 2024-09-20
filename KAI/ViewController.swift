@@ -8,60 +8,38 @@
 import Cocoa
 import SwiftUI
 
-extension Bundle {
-    var bundleName: String? {
-        infoDictionary?["CFBundleName"] as? String
-    }
+public struct AppBundleKey {
+    public let build = "CFBundleVersion"
+    public let version = "CFBundleShortVersionString"
+    public let identifier = "CFBundleIdentifier"
+    public let name = "CFBundleName"
+    public let copyright = "NSHumanReadableCopyright"
+}
 
-    var version: String? {
-        infoDictionary?["CFBundleShortVersionString"] as? String
-    }
+@dynamicMemberLookup
+public enum AppBundle {
+    static let shared = AppBundleKey()
 
-    var build: String? {
-        infoDictionary?["CFBundleVersion"] as? String
+    public static subscript<T>(dynamicMember keyPath: KeyPath<AppBundleKey, T>) -> T {
+        let key = shared[keyPath: keyPath] as! String
+        return Bundle.main.infoDictionary?[key] as! T
     }
-
-    var commitHash: String? {
-        infoDictionary?["CommitHash"] as? String
-    }
-
-    var commitDate: String? {
-        infoDictionary?["CommitDate"] as? String
-    }
-
-    var humanReadableCopyright: String? {
-        infoDictionary?["NSHumanReadableCopyright"] as? String
-    }
-
 }
 
 class ViewController: NSViewController {
+    @IBOutlet var tt: NSTextField!
 
-    @IBOutlet weak var tt: NSTextField!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let main = Bundle.main
-        tt.stringValue = """
-                Version - \(main.version ?? "XX")
-                Hash - \(main.commitHash ?? "XX")
-                Date - \(main.commitDate ?? "XX")
-                Build - \(main.build ?? "XX")
-                555
-        """
-
-
+        tt.stringValue = "Version \(AppBundle.version) (\(AppBundle.build))"
 
         // Do any additional setup after loading the view.
     }
 
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
+            // Update the view, if already loaded.
         }
     }
-
-
 }
-

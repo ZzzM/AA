@@ -23,6 +23,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 
 
+### mac fly
+
+```sh
+[bundle exec] fastlane mac fly
+```
+
+
+
 ### mac test
 
 ```sh

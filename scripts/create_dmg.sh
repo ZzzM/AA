@@ -9,7 +9,8 @@ function __transform() {
 function __sparkle_enclosure() {
     local app_path=$BUILD_PATH/$APP_NAME.dmg
     local signature=`echo $SPARKLE_KEY | ./bin/sign_update -f - $app_path`
-    local enclosure="<sparkle:version>$APP_VERSION</sparkle:version>
+    local enclosure="<sparkle:version>$APP_BUILD</sparkle:version>
+    <sparkle:shortVersionString>$APP_VERSION</sparkle:shortVersionString>
     <sparkle:minimumSystemVersion>$SYS_MIN_VERSION</sparkle:minimumSystemVersion>
     <enclosure url=\"$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/releases/download/$APP_VERSION/$APP_NAME.dmg\" $signature type=\"applicationoctet-stream\" />"
     echo $enclosure
