@@ -97,6 +97,6 @@ platform :mac do
   end
 
   lane :show do
- 
+    sh "cd .. && zsh ./scripts/test.sh"
   end
 end

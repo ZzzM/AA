@@ -9,21 +9,37 @@ import Cocoa
 import SwiftUI
 
 public struct AppBundleKey {
+
     public let build = "CFBundleVersion"
     public let version = "CFBundleShortVersionString"
     public let identifier = "CFBundleIdentifier"
     public let name = "CFBundleName"
     public let copyright = "NSHumanReadableCopyright"
+
 }
 
 @dynamicMemberLookup
 public enum AppBundle {
+
     static let shared = AppBundleKey()
 
     public static subscript<T>(dynamicMember keyPath: KeyPath<AppBundleKey, T>) -> T {
         let key = shared[keyPath: keyPath] as! String
+
         return Bundle.main.infoDictionary?[key] as! T
+
     }
+
+    func foo(x: String, y: String) {
+        let a = 10
+        if a > 11 {
+
+        } else {
+
+        }
+
+    }
+
 }
 
 class ViewController: NSViewController {
@@ -42,4 +58,5 @@ class ViewController: NSViewController {
             // Update the view, if already loaded.
         }
     }
+
 }
