@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		988530202816328300FD98BC /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 9885301F2816328300FD98BC /* LaunchAtLogin */; };
-		98D24779277EFFF300F2B278 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D24778277EFFF300F2B278 /* AppDelegate.swift */; };
-		98D2477B277EFFF300F2B278 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D2477A277EFFF300F2B278 /* ViewController.swift */; };
 		98D2477D277EFFF500F2B278 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98D2477C277EFFF500F2B278 /* Assets.xcassets */; };
-		98D24780277EFFF500F2B278 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98D2477E277EFFF500F2B278 /* Main.storyboard */; };
-		98D2479B2785814E00F2B278 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 98D2479A2785814E00F2B278 /* Sparkle */; };
+		98D9FC612CA57EC7008379A9 /* KAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D9FC602CA57EC7008379A9 /* KAIApp.swift */; };
+		98E2B96E2CA7187E00E7C594 /* Features in Frameworks */ = {isa = PBXBuildFile; productRef = 98E2B96D2CA7187E00E7C594 /* Features */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,15 +26,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9803EC5228104E3500198211 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		9803EC5428104E6C00198211 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		9839E7FC2CA5760A0023F2CD /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = "<group>"; };
 		98D24775277EFFF300F2B278 /* KAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		98D24778277EFFF300F2B278 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		98D2477A277EFFF300F2B278 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		98D2477C277EFFF500F2B278 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		98D2477F277EFFF500F2B278 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		98D24781277EFFF500F2B278 /* KAI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KAI.entitlements; sourceTree = "<group>"; };
-		98D2479C278596A800F2B278 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		98D9FC602CA57EC7008379A9 /* KAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KAIApp.swift; sourceTree = "<group>"; };
+		98D9FC662CA58A10008379A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,8 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				988530202816328300FD98BC /* LaunchAtLogin in Frameworks */,
-				98D2479B2785814E00F2B278 /* Sparkle in Frameworks */,
+				98E2B96E2CA7187E00E7C594 /* Features in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +56,7 @@
 		98D2476C277EFFF300F2B278 = {
 			isa = PBXGroup;
 			children = (
+				9839E7FC2CA5760A0023F2CD /* Features */,
 				98D24777277EFFF300F2B278 /* KAI */,
 				98C7596B2B2507EE00ED4AE4 /* Frameworks */,
 				98D24776277EFFF300F2B278 /* Products */,
@@ -80,12 +74,10 @@
 		98D24777277EFFF300F2B278 /* KAI */ = {
 			isa = PBXGroup;
 			children = (
-				98D2479C278596A800F2B278 /* Info.plist */,
-				98D24778277EFFF300F2B278 /* AppDelegate.swift */,
-				98D2477A277EFFF300F2B278 /* ViewController.swift */,
+				98D9FC662CA58A10008379A9 /* Info.plist */,
 				98D2477C277EFFF500F2B278 /* Assets.xcassets */,
-				98D2477E277EFFF500F2B278 /* Main.storyboard */,
 				98D24781277EFFF500F2B278 /* KAI.entitlements */,
+				98D9FC602CA57EC7008379A9 /* KAIApp.swift */,
 			);
 			path = KAI;
 			sourceTree = "<group>";
@@ -100,7 +92,6 @@
 				98D24771277EFFF300F2B278 /* Sources */,
 				98D24772277EFFF300F2B278 /* Frameworks */,
 				98D24773277EFFF300F2B278 /* Resources */,
-				980E470C29B8F23F00036309 /* ShellScript */,
 				98C7597E2B2507F000ED4AE4 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
@@ -109,8 +100,7 @@
 			);
 			name = KAI;
 			packageProductDependencies = (
-				98D2479A2785814E00F2B278 /* Sparkle */,
-				9885301F2816328300FD98BC /* LaunchAtLogin */,
+				98E2B96D2CA7187E00E7C594 /* Features */,
 			);
 			productName = KAI;
 			productReference = 98D24775277EFFF300F2B278 /* KAI.app */;
@@ -129,6 +119,7 @@
 					98D24774277EFFF300F2B278 = {
 						CreatedOnToolsVersion = 13.2.1;
 						DevelopmentTeam = "";
+						LastSwiftMigration = 1600;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -144,8 +135,6 @@
 			);
 			mainGroup = 98D2476C277EFFF300F2B278;
 			packageReferences = (
-				98D247992785814E00F2B278 /* XCRemoteSwiftPackageReference "Sparkle" */,
-				9885301E2816328300FD98BC /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 			);
 			productRefGroup = 98D24776277EFFF300F2B278 /* Products */;
 			projectDirPath = "";
@@ -162,57 +151,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				98D2477D277EFFF500F2B278 /* Assets.xcassets in Resources */,
-				98D24780277EFFF500F2B278 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		980E470C29B8F23F00036309 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		98D24771277EFFF300F2B278 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98D2477B277EFFF300F2B278 /* ViewController.swift in Sources */,
-				98D24779277EFFF300F2B278 /* AppDelegate.swift in Sources */,
+				98D9FC612CA57EC7008379A9 /* KAIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		98D2477E277EFFF500F2B278 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				98D2477F277EFFF500F2B278 /* Base */,
-				9803EC5228104E3500198211 /* zh-Hans */,
-				9803EC5428104E6C00198211 /* en */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		98D24782277EFFF500F2B278 /* Debug */ = {
@@ -341,28 +294,30 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = KAI/KAI.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 27;
+				CURRENT_PROJECT_VERSION = 30;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KAI/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12;
-				MARKETING_VERSION = 1.0.6;
+				MARKETING_VERSION = 1.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alpha.tts.KAI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -372,25 +327,26 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = KAI/KAI.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 27;
+				CURRENT_PROJECT_VERSION = 30;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KAI/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12;
-				MARKETING_VERSION = 1.0.6;
+				MARKETING_VERSION = 1.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alpha.tts.KAI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -422,35 +378,10 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		9885301E2816328300FD98BC /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		98D247992785814E00F2B278 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sparkle-project/Sparkle";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.5.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		9885301F2816328300FD98BC /* LaunchAtLogin */ = {
+		98E2B96D2CA7187E00E7C594 /* Features */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9885301E2816328300FD98BC /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
-			productName = LaunchAtLogin;
-		};
-		98D2479A2785814E00F2B278 /* Sparkle */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 98D247992785814E00F2B278 /* XCRemoteSwiftPackageReference "Sparkle" */;
-			productName = Sparkle;
+			productName = Features;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

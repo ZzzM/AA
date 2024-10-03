@@ -38,6 +38,7 @@ platform :mac do
     build_mac_app(
       clean: true,
       silent: true,
+      skip_codesigning: true,
       export_method: "mac-application",
       output_directory: ENV["BUILD_PATH"])
       
