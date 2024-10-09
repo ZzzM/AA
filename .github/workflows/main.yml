@@ -2,9 +2,9 @@ name: Venus
 
 on:
   workflow_dispatch:
-  # push:
-  #   tags:
-  #     - '*'
+  push:
+    tags:
+      - '*'
       
 env:
   SPARKLE_KEY: ${{ secrets.SPARKLE_KEY }}
@@ -24,6 +24,8 @@ jobs:
       
     - name: Setup Node
       uses: actions/setup-node@v4
+      with:
+        node-version: 20
       
     - name: Setup Xcode
       uses: maxim-lobanov/setup-xcode@v1
@@ -39,7 +41,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       with:
         body_path: ${{ env.LOG_PATH }}
-        files: ${{ env.APP_PATH }}
+        files: ${{ env.DMG_PATH }}
  
     - name: Deploy
       uses: actions/github-script@v7
@@ -58,7 +60,7 @@ jobs:
       with:
         key: ${{ env.BARK_KEY }}
         host: ${{ env.BARK_HOST }}
-        title: ${{ env.APP_NAME }} - ${{ env.APP_VERSION }}
+        title: ${{ env.APP_NAME }} v${{ env.APP_VERSION }} (${{ env.APP_BUILD }})
         body: ${{ job.status }}
         icon: ${{ env.BARK_ICON }}
         sound: alarm

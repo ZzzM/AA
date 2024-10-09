@@ -48,32 +48,17 @@ platform :mac do
     sh "rm -vfr ~/Library/Developer/Xcode/Archives/*"
   end
 
-
-  lane :fly do
-
-
-    # 1.0.8  6 auto
-    # 1.1.0 7 minor
-    # 1.2.0 8 minor
-    # 2.0.0 9 major
-
-    # increment_build_number_in_xcodeproj
-    # increment_version_number_in_xcodeproj
-
-    ENV["APP_BUILD"] = get_build_number_from_xcodeproj
-   # increment_version_number_in_xcodeproj(bump_type: 'minor')
-   # increment_version_number_in_xcodeproj(bump_type: 'major')
-
-    UI.message ENV["APP_BUILD"]
-  end
-
-
   # TEST
   lane :test do |options|
     setup
     build
     clean
-    sh "cd .. && zsh ./scripts/test.sh"
+    case UI.input("do you want to release app? (yes / no)")
+    when "yes"
+       sh "cd .. && zsh ./scripts/test.sh release"
+    else
+       sh "cd .. && zsh ./scripts/test.sh debug"
+    end
   end
   
   lane :release do |options|
@@ -98,6 +83,29 @@ platform :mac do
   end
 
   lane :show do
-    sh "cd .. && zsh ./scripts/test.sh"
+    case UI.input("do you want to release app? (yes / no)")
+    when "yes"
+      UI.message("YES")
+    else
+      UI.message("NO")
+    end
   end
+
+  lane :fly do
+
+    # 1.0.8  6 auto
+    # 1.1.0 7 minor
+    # 1.2.0 8 minor
+    # 2.0.0 9 major
+
+    # increment_build_number_in_xcodeproj
+    # increment_version_number_in_xcodeproj
+
+    ENV["APP_BUILD"] = get_build_number_from_xcodeproj
+   # increment_version_number_in_xcodeproj(bump_type: 'minor')
+   # increment_version_number_in_xcodeproj(bump_type: 'major')
+
+    UI.message ENV["APP_BUILD"]
+  end
+  
 end
