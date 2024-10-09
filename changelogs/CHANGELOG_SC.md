@@ -1,4 +1,14 @@
-## 1.0.9 - 2024-06-01 
+## [1.1.0] - 2024-07-01 
+### Added
+
+- 110sc
+
+### Changed
+
+- 110sc
+
+---
+## [1.0.9] - 2024-06-01 
 ### Added
 
 - 109sc
@@ -102,7 +112,7 @@
 
 ---
 
-## Note
+## 变动类型
 
 - `Added` 新添加的功能
 - `Changed` 对现有功能的变更
@@ -110,3 +120,7 @@
 - `Removed` 已经移除的功能
 - `Fixed` 对bug的修复
 - `Security` 对安全的改进 
+
+[1.1.0]:https://github.com/ZzzM/AA//compare/1.0.9...1.1.0
+[1.0.9]:https://github.com/ZzzM/AA//compare/1.0.8...1.0.9
+[1.0.0]:https://github.com/ZzzM/AA/releases/tag/1.0.0

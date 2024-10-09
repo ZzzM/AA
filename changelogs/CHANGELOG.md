@@ -1,4 +1,14 @@
-## 1.0.9 - 2024-06-01 
+## [1.1.0] - 2024-07-01 
+### Added
+
+- 110
+
+### Changed
+
+- 110
+
+---
+## [1.0.9] - 2024-06-01 
 ### Added
 
 - 109
@@ -89,7 +99,7 @@
 
 ---
 
-## 1.0.0 - 2022-01-10 
+## [1.0.0] - 2022-01-10 
 ### Added
 
 - hello
@@ -100,7 +110,7 @@
 
 ---
 
-## Note
+## Types of changes
 
 - `Added` for new features
 - `Changed` for changes in existing functionality
@@ -109,3 +119,6 @@
 - `Fixed` for any bug fixes
 - `Security` in case of vulnerabilities
 
+[1.1.0]:https://github.com/ZzzM/AA//compare/1.0.9...1.1.0
+[1.0.9]:https://github.com/ZzzM/AA//compare/1.0.8...1.0.9
+[1.0.0]:https://github.com/ZzzM/AA/releases/tag/1.0.0
