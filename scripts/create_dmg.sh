@@ -1,3 +1,6 @@
+changelog="changelogs/CHANGELOG.md"
+changelogSC="changelogs/CHANGELOG_SC.md"
+
 function __transform() {
     local changelog=`cat $1`
     changelog=${changelog%%---*}
@@ -37,8 +40,8 @@ function create_dmg() {
 }
 
 function generate_changlog() {
-    echo "$(__transform changelogs/CHANGELOG.md)" > $LOG_PATH
-    echo "$(__transform changelogs/CHANGELOG_SC.md)" >> $LOG_PATH
+    echo "$(__transform $changelog)" > $LOG_PATH
+    echo "$(__transform $changelogSC)" >> $LOG_PATH
     echo $(__sparkle_enclosure) >> $LOG_PATH
     echo "LOG_PATH=$LOG_PATH" >> "$GITHUB_ENV"
 }

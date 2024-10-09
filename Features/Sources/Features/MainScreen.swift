@@ -14,15 +14,22 @@ public struct MainScreen: View {
     public init() {
         Updater.start()
     }
-    
-    public var body: some View {
-        Text(L10n.version, bundle: .assets) + Text(versionNumbers).font(.largeTitle)
 
-        Button(role: .destructive) {
-            Updater.check()
-        } label: {
-            Text(L10n.checkForUpdates, bundle: .assets)
+
+
+    public var body: some View {
+
+        VStack {
+
+            Text(L10n.version, bundle: .assets) + Text(versionNumbers).font(.largeTitle)
+
+            Button(role: .destructive) {
+                Updater.check()
+            } label: {
+                Text(L10n.checkForUpdates, bundle: .assets)
+            }
         }
+
     }
 
 }
