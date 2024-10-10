@@ -5,6 +5,7 @@ platform :mac do
   before_all do
     ENV["APP_NAME"] = "KAI"
     ENV["APP_VERSION"] = last_git_tag
+    ENV["APP_BUILD"] = "#{number_of_commits}"
     ENV["SYS_MIN_VERSION"] = "12.0"
     ENV["BUILD_PATH"] = "./build"
     ENV["LOG_PATH"] = ENV["BUILD_PATH"] + "/TMP.md"
@@ -20,16 +21,8 @@ platform :mac do
 
   private_lane :setup do
 
-    name = ENV["APP_NAME"]
-    version = ENV["APP_VERSION"]
-
-    increment_build_number_in_xcodeproj
-
-    ENV["APP_BUILD"] = get_build_number_from_xcodeproj
-    # increment_version_number_in_xcodeproj(version_number: version, scheme: name)
-    # increment_build_number_in_xcodeproj(build_number: version, scheme: name)
-    increment_version_number_in_xcodeproj(version_number: version)
-
+    increment_build_number_in_xcodeproj(build_number: ENV["APP_BUILD"])
+    increment_version_number_in_xcodeproj(version_number: ENV["APP_VERSION"])
 
   end
 
@@ -83,29 +76,13 @@ platform :mac do
   end
 
   lane :show do
-    case UI.input("do you want to release app? (yes / no)")
-    when "yes"
-      UI.message("YES")
-    else
-      UI.message("NO")
-    end
-  end
-
-  lane :fly do
-
-    # 1.0.8  6 auto
-    # 1.1.0 7 minor
-    # 1.2.0 8 minor
-    # 2.0.0 9 major
-
-    # increment_build_number_in_xcodeproj
-    # increment_version_number_in_xcodeproj
-
-    ENV["APP_BUILD"] = get_build_number_from_xcodeproj
-   # increment_version_number_in_xcodeproj(bump_type: 'minor')
-   # increment_version_number_in_xcodeproj(bump_type: 'major')
-
-    UI.message ENV["APP_BUILD"]
+    # case UI.input("do you want to release app? (yes / no)")
+    # when "yes"
+    #   UI.message("YES")
+    # else
+    #   UI.message("NO")
+    # end
+    setup
   end
   
 end

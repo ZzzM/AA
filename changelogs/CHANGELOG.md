@@ -1,3 +1,13 @@
+## [1.1.1] - 2024-08-01 
+### Added
+
+- 111
+
+### Changed
+
+- 111
+
+---
 ## [1.1.0] - 2024-07-01 
 ### Added
 
@@ -119,6 +129,7 @@
 - `Fixed` for any bug fixes
 - `Security` in case of vulnerabilities
 
-[1.1.0]:https://github.com/ZzzM/AA//compare/1.0.9...1.1.0
-[1.0.9]:https://github.com/ZzzM/AA//compare/1.0.8...1.0.9
+[1.1.1]:https://github.com/ZzzM/AA/compare/1.1.0...1.1.1
+[1.1.0]:https://github.com/ZzzM/AA/compare/1.0.9...1.1.0
+[1.0.9]:https://github.com/ZzzM/AA/compare/1.0.8...1.0.9
 [1.0.0]:https://github.com/ZzzM/AA/releases/tag/1.0.0

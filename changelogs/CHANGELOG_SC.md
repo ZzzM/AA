@@ -1,3 +1,13 @@
+## [1.1.1] - 2024-08-01 
+### Added
+
+- 111sc
+
+### Changed
+
+- 111sc
+
+---
 ## [1.1.0] - 2024-07-01 
 ### Added
 
@@ -121,6 +131,7 @@
 - `Fixed` 对bug的修复
 - `Security` 对安全的改进 
 
-[1.1.0]:https://github.com/ZzzM/AA//compare/1.0.9...1.1.0
-[1.0.9]:https://github.com/ZzzM/AA//compare/1.0.8...1.0.9
+[1.1.1]:https://github.com/ZzzM/AA/compare/1.1.0...1.1.1
+[1.1.0]:https://github.com/ZzzM/AA/compare/1.0.9...1.1.0
+[1.0.9]:https://github.com/ZzzM/AA/compare/1.0.8...1.0.9
 [1.0.0]:https://github.com/ZzzM/AA/releases/tag/1.0.0
