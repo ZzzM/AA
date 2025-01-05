@@ -2,9 +2,7 @@ name: Venus
 
 on:
   workflow_dispatch:
-  push:
-    tags:
-      - '*'
+
       
 env:
   SPARKLE_KEY: ${{ secrets.SPARKLE_KEY }}
