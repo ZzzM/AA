@@ -27,7 +27,7 @@
       <description xml:lang="zh"><![CDATA[<h3 id="added">Added</h3><ul><li>110sc</li></ul><h3 id="changed">Changed</h3><ul><li>110sc</li></ul>
 ]]>      </description>
       <sparkle:version>337</sparkle:version>
-      <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
+      <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
       <sparkle:fullReleaseNotesLink xml:lang="en">https://github.com/ZzzM/AA/blob/main/changelogs/CHANGELOG.md</sparkle:fullReleaseNotesLink>
       <sparkle:fullReleaseNotesLink xml:lang="zh">https://github.com/ZzzM/AA/blob/main/changelogs/CHANGELOG_SC.md</sparkle:fullReleaseNotesLink>
