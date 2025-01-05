@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>AA</title>
+        
+            
+                
+                    
+                    
+                    <item>
+                        <title>Version 1.1.0</title>
+                        <pubDate>Sun, 05 Jan 2025 18:02:55 +0000</pubDate>
+                        
+                        
+                        
+                        <description xml:lang="en"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>110</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>110</li>
+</ul>
+]]></description>
+
+                        
+                        
+                        <description xml:lang="zh"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>110sc</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>110sc</li>
+</ul>
+]]></description>
+                        
+
+                        
+                        <sparkle:version>337</sparkle:version> <sparkle:shortVersionString>v1.0.0</sparkle:shortVersionString> <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion> <sparkle:fullReleaseNotesLink xml:lang="en">https://github.com/ZzzM/AA/blob/main/changelogs/CHANGELOG.md</sparkle:fullReleaseNotesLink> <sparkle:fullReleaseNotesLink xml:lang="zh">https://github.com/ZzzM/AA/blob/main/changelogs/CHANGELOG_SC.md</sparkle:fullReleaseNotesLink> <enclosure url="https://github.com/ZzzM/AA/releases/download/v1.0.0/KAI.dmg" sparkle:edSignature="eRAyWhmkC0U5iBtDdbSeqlutwU3PAy3W7rNYWPc2KM8c14PHv2TOJ9gAGJjqjj92bj6nuktDJ784b/0iGrooDw==" length="1761129" type="applicationoctet-stream" />
+                    </item>
+                    
+                
+            
+        
+            
+                
+                    
+                    
+                    <item>
+                        <title>Version v1.0.0</title>
+                        <pubDate>Sun, 05 Jan 2025 18:00:56 +0000</pubDate>
+                        
+                        
+                        
+                        <description xml:lang="en"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>110</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>110</li>
+</ul>
+]]></description>
+
+                        
+                        
+                        <description xml:lang="zh"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>110sc</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>110sc</li>
+</ul>
+]]></description>
+                        
+
+                        
+                        <sparkle:version>337</sparkle:version> <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString> <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion> <sparkle:fullReleaseNotesLink xml:lang="en">https://github.com/ZzzM/AA/blob/main/changelogs/CHANGELOG.md</sparkle:fullReleaseNotesLink> <sparkle:fullReleaseNotesLink xml:lang="zh">https://github.com/ZzzM/AA/blob/main/changelogs/CHANGELOG_SC.md</sparkle:fullReleaseNotesLink> <enclosure url="https://github.com/ZzzM/AA/releases/download/1.1.0/KAI.dmg" sparkle:edSignature="kAiFada4qJSpaXybhuOdBUvKFx7R0/wmkDHbDl5mtvXJ3vBh1avNtYhk6UW9nDNlPVMKma+2HQ55kYiHGD6tDg==" length="1761115" type="applicationoctet-stream" />
+                    </item>
+                    
+                
+            
+        
+            
+                
+                    
+                    
+                    <item>
+                        <title>Version 1.0.9</title>
+                        <pubDate>Wed, 09 Oct 2024 15:23:42 +0000</pubDate>
+                        
+                        
+                        
+                        <description xml:lang="en"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>109</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>109</li>
+</ul>
+]]></description>
+
+                        
+                        
+                        <description xml:lang="zh"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>109sc</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>109sc</li>
+</ul>
+]]></description>
+                        
+
+                        
+                        <sparkle:version>35</sparkle:version> <sparkle:shortVersionString>1.0.9</sparkle:shortVersionString> <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion> <sparkle:fullReleaseNotesLink xml:lang="en">https://github.com/ZzzM/AA/blob/main/</sparkle:fullReleaseNotesLink> <sparkle:fullReleaseNotesLink xml:lang="zh">https://github.com/ZzzM/AA/blob/main/</sparkle:fullReleaseNotesLink> <enclosure url="https://github.com/ZzzM/AA/releases/download/1.0.9/KAI.dmg" sparkle:edSignature="mAKAjp+CNC1JHCgfyXEMNzK7uQlbotgxIer3qGsPsH2zFqM7Ez29o7TIAaVVuBZCUGoU4eqmHPlOIVir42gGBg==" length="1760647" type="applicationoctet-stream" />
+                    </item>
+                    
+                
+            
+        
+            
+                
+                    
+                    
+                    <item>
+                        <title>Version 1.0.8</title>
+                        <pubDate>Thu, 03 Oct 2024 19:08:26 +0000</pubDate>
+                        
+                        
+                        
+                        <description xml:lang="en"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>108</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>108</li>
+</ul>
+]]></description>
+
+                        
+                        
+                        <description xml:lang="zh"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>108sc</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>108sc</li>
+</ul>
+]]></description>
+                        
+
+                        
+                        <sparkle:version>34</sparkle:version> <sparkle:shortVersionString>1.0.8</sparkle:shortVersionString> <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion> <sparkle:fullReleaseNotesLink xml:lang="en">https://github.com/ZzzM/AA/blob/main/changelogs/CHANGELOG.md</sparkle:fullReleaseNotesLink> <sparkle:fullReleaseNotesLink xml:lang="zh">https://github.com/ZzzM/AA/blob/main/changelogs/CHANGELOG_SC.md</sparkle:fullReleaseNotesLink> <enclosure url="https://github.com/ZzzM/AA/releases/download/1.0.8/KAI.dmg" sparkle:edSignature="TfDPAoJP8tYQXNdVojYESRUST4Wf7uV0XI7QStVVH2rvbsVCyyTRp4jmfnHolO16UBEbmmxjJAas7gCSAgwmDQ==" length="1760825" type="applicationoctet-stream" />
+                    </item>
+                    
+                
+            
+        
+            
+                
+                    
+                    
+                    <item>
+                        <title>Version 1.0.7</title>
+                        <pubDate>Thu, 26 Sep 2024 08:15:49 +0000</pubDate>
+                        
+                        
+                        
+                        <description xml:lang="en"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>107</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>107</li>
+</ul>
+]]></description>
+
+                        
+                        
+                        <description xml:lang="zh"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>107sc</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>1sc</li>
+</ul>
+]]></description>
+                        
+
+                        
+                        <sparkle:version>30</sparkle:version> <sparkle:shortVersionString>1.0.7</sparkle:shortVersionString> <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion> <sparkle:fullReleaseNotesLink xml:lang="en">https://github.com/ZzzM/AA/blob/main/changelogs/CHANGELOG.md</sparkle:fullReleaseNotesLink> <sparkle:fullReleaseNotesLink xml:lang="zh">https://github.com/ZzzM/AA/blob/main/changelogs/CHANGELOG_SC.md</sparkle:fullReleaseNotesLink> <enclosure url="https://github.com/ZzzM/AA/releases/download/1.0.7/KAI.dmg" sparkle:edSignature="+faKguxp/R4yKUwaV45Gh8P/2q+VeZ/c2rFX5Fl60sh53cyguyCuV7Y0X5atSoZadfFpfm/CPm3wNuSM4JoUBg==" length="1821562" type="applicationoctet-stream" />
+                    </item>
+                    
+                
+            
+        
+            
+                
+                    
+                    
+                    <item>
+                        <title>Version 1.0.6</title>
+                        <pubDate>Sat, 02 Dec 2023 23:12:11 +0000</pubDate>
+                        
+                        
+                        
+                        <description xml:lang="en"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>1.0.6 e</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>1.0.6 e</li>
+</ul>
+]]></description>
+
+                        
+                        
+                        <description xml:lang="zh"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>1.0.6</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>1.0.6</li>
+</ul>
+]]></description>
+                        
+
+                        
+                        <sparkle:version>1.0.6</sparkle:version> <sparkle:minimumSystemVersion>13.1.0</sparkle:minimumSystemVersion> <enclosure url="https://github.com/ZzzM/AA/releases/download/1.0.6/KAI.dmg" sparkle:edSignature="kOdBNjj4bsANxS8xRBJiLiVGFHuDr9kQVhsSq5UgdOSpEGHHtV/th96reHviNfRr9ouxVqTG+FDuh8VhaeAyDw==" length="3010062" type="applicationoctet-stream" />
+                    </item>
+                    
+                
+            
+        
+            
+                
+                    
+                    
+                    <item>
+                        <title>Version 1.0.5</title>
+                        <pubDate>Mon, 27 Nov 2023 00:29:45 +0000</pubDate>
+                        
+                        
+                        
+                        <description xml:lang="en"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>hello</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>hello</li>
+</ul>
+]]></description>
+
+                        
+                        
+                        <description xml:lang="zh"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>你好</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>你好</li>
+</ul>
+]]></description>
+                        
+
+                        
+                        <sparkle:version>1.0.5</sparkle:version> <sparkle:minimumSystemVersion>13.1.0</sparkle:minimumSystemVersion> <enclosure url="https://github.com/ZzzM/AA/releases/download/1.0.5/KAI.dmg" sparkle:edSignature="OkjYCpEugTEb2CTXGA5eXUpIJWLWUZOLWWUbyqXZaoxkRMcYHVG+XvYizJTKnpmSoHXyquOhrA0B5fnEdwn7Cw==" length="3010000" type="applicationoctet-stream" />
+                    </item>
+                    
+                
+            
+        
+            
+                
+                    
+                    
+                    <item>
+                        <title>Version 1.0.4</title>
+                        <pubDate>Fri, 24 Nov 2023 23:52:37 +0000</pubDate>
+                        
+                        
+                        
+                        <description xml:lang="en"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>hello</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>hello</li>
+</ul>
+]]></description>
+
+                        
+                        
+                        <description xml:lang="zh"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>你好</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>你好</li>
+</ul>
+]]></description>
+                        
+
+                        
+                        <sparkle:version>1.0.4</sparkle:version> <sparkle:minimumSystemVersion>13.1.0</sparkle:minimumSystemVersion> <enclosure url="https://github.com/ZzzM/AA/releases/download/1.0.4/KAI.dmg" sparkle:edSignature="Myk+WO+7Q9kWYJiZGe/iFPoyN9vU3vL0r+F4ovSrUcekHzpKZfT7v+9GxFDDtDLpA683hI3C3uRmni8gVG14Ag==" length="3015741" type="applicationoctet-stream" />
+                    </item>
+                    
+                
+            
+        
+            
+                
+                    
+                    
+                    <item>
+                        <title>Version 1.0.3</title>
+                        <pubDate>Fri, 24 Nov 2023 23:32:31 +0000</pubDate>
+                        
+                        
+                        
+                        <description xml:lang="en"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>hello</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>hello</li>
+</ul>
+]]></description>
+
+                        
+                        
+                        <description xml:lang="zh"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>你好</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>你好</li>
+</ul>
+]]></description>
+                        
+
+                        
+                        <sparkle:version>1.0.3</sparkle:version> <sparkle:minimumSystemVersion>14.1.0</sparkle:minimumSystemVersion> <enclosure url="https://github.com/ZzzM/AA/releases/download/1.0.3/KAI.dmg" sparkle:edSignature="lsdUeC3ZRcwI+1Hg4SFUEH9MZ+jWtfrtJEjXSZ+lGibz7YvV6dAN9PCYPIA/SPGvi/he0AYP1nOkGEiLjWjPAg==" length="3015769" type="applicationoctet-stream" />
+                    </item>
+                    
+                
+            
+        
+            
+                
+                    
+                    
+                    <item>
+                        <title>Version 1.0.2</title>
+                        <pubDate>Fri, 24 Nov 2023 23:30:14 +0000</pubDate>
+                        
+                        
+                        
+                        <description xml:lang="en"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>hello</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>hello</li>
+</ul>
+]]></description>
+
+                        
+                        
+                        <description xml:lang="zh"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>你好</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>你好</li>
+</ul>
+]]></description>
+                        
+
+                        
+                        <sparkle:version>1.0.2</sparkle:version> <sparkle:minimumSystemVersion>13.1.0</sparkle:minimumSystemVersion> <enclosure url="https://github.com/ZzzM/AA/releases/download/1.0.2/KAI.dmg" sparkle:edSignature="lsdUeC3ZRcwI+1Hg4SFUEH9MZ+jWtfrtJEjXSZ+lGibz7YvV6dAN9PCYPIA/SPGvi/he0AYP1nOkGEiLjWjPAg==" length="3015769" type="applicationoctet-stream" />
+                    </item>
+                    
+                
+            
+        
+            
+                
+                    
+                    
+                    <item>
+                        <title>Version 1.0.1</title>
+                        <pubDate>Fri, 24 Nov 2023 23:22:21 +0000</pubDate>
+                        
+                        
+                        
+                        <description xml:lang="en"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>hello</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>hello</li>
+</ul>
+]]></description>
+
+                        
+                        
+                        <description xml:lang="zh"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>你好</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>你好</li>
+</ul>
+]]></description>
+                        
+
+                        
+                        <sparkle:version>1.0.1</sparkle:version> <sparkle:minimumSystemVersion>12.1.0</sparkle:minimumSystemVersion> <enclosure url="https://github.com/ZzzM/AA/releases/download/1.0.1/KAI.dmg" sparkle:edSignature="/XD9SyBMMytxAdmCRNIoYQo989B1F6eLnJOMcOf41JblxJOaiYGxbTkmxOnTfmPOeocFwUjlb0MXUoNNIs5TBA==" length="3015724" type="applicationoctet-stream" />
+                    </item>
+                    
+                
+            
+        
+            
+                
+                    
+                    
+                    <item>
+                        <title>Version 1.0.0</title>
+                        <pubDate>Fri, 24 Nov 2023 22:35:55 +0000</pubDate>
+                        
+                        
+                        
+                        <description xml:lang="en"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>hello</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>hello</li>
+</ul>
+]]></description>
+
+                        
+                        
+                        <description xml:lang="zh"><![CDATA[<h3 id="added">Added</h3>
+
+<ul>
+  <li>你好</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>你好</li>
+</ul>
+]]></description>
+                        
+
+                        
+                        <sparkle:version>1.0.0</sparkle:version> <sparkle:minimumSystemVersion>12.1.0</sparkle:minimumSystemVersion> <enclosure url="https://github.com/ZzzM/AA/releases/download/1.0.0/KAI.dmg" sparkle:edSignature="w5eAIxTNq1ifrQsiBHqz+F7UuTYlmLt364kaPPk0QW2oXN55apMs+U3c6JTy7qrzGAPEE+KyaTrrwsqDuMbkBQ==" length="3015760" type="applicationoctet-stream" />
+                    </item>
+                    
+                
+            
+        
+    </channel>
+</rss>
+
