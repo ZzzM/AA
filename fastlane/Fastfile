@@ -4,7 +4,7 @@ platform :mac do
   
   before_all do
     ENV["APP_NAME"] = "KAI"
-    ENV["APP_VERSION"] = last_git_tag
+    ENV["APP_TAG_NAME"] = last_git_tag
     ENV["APP_BUILD"] = "#{number_of_commits}"
     ENV["SYS_MIN_VERSION"] = "12.0"
     ENV["BUILD_PATH"] = "./build"
@@ -21,6 +21,12 @@ platform :mac do
 
   private_lane :setup do
 
+    path = ENV["APP_NAME"] + "/Info.plist"
+    ENV["APP_VERSION"] = format_version.first
+    ENV["APP_VERSION_NAME"] = format_version.join(' ')
+    ENV["APP_RELEASE_NAME"] = "Version #{ENV["APP_VERSION_NAME"]}"
+
+    set_info_plist_value(path: path, key: "AppVersionName", value: ENV["APP_VERSION_NAME"])
     increment_build_number_in_xcodeproj(build_number: ENV["APP_BUILD"])
     increment_version_number_in_xcodeproj(version_number: ENV["APP_VERSION"])
 
@@ -31,7 +37,7 @@ platform :mac do
     build_mac_app(
       clean: true,
       silent: true,
-      skip_codesigning: true,
+      scheme: ENV["APP_NAME"],
       export_method: "mac-application",
       output_directory: ENV["BUILD_PATH"])
       
@@ -56,21 +62,24 @@ platform :mac do
   
   lane :release do |options|
 
-    name = ENV["APP_NAME"]
-    tag = ENV["APP_VERSION"]
+    release_name = ENV["APP_RELEASE_NAME"]
+    tag_name = ENV["APP_TAG_NAME"]
 
     repo = options[:repo]
     token = options[:token]
 
     log_path = "../" + ENV["LOG_PATH"]
     dmg_path = ENV["DMG_PATH"] 
+    
+    is_prerelease = tag_name.include?('beta')
 
     set_github_release(
       repository_name: repo,
       api_token: token,
-      name: tag,
-      tag_name: tag,
+      name: release_name,
+      tag_name: tag_name,
       description: (File.read(log_path) rescue "No changelog provided"),
+      is_prerelease: is_prerelease,
       upload_assets: [dmg_path])
       
   end
@@ -82,7 +91,25 @@ platform :mac do
     # else
     #   UI.message("NO")
     # end
-    setup
+    # setup
+
+  end
+
+  private_lane :format_version do
+    if last_git_tag =~ /^v?(\d+\.\d+\.\d+)-([\w\.]+)$/
+      # 匹配带后缀的版本号，例如 1.0.0-beta.1 或 v1.0.0-beta.1
+      main_version = $1
+      suffix = $2.split('.').map do |part|
+        part.downcase == "rc" ? part.upcase : part.capitalize
+      end.join(' ') # 将 "." 替换为空格，特殊处理 RC
+      [main_version, suffix]
+    elsif last_git_tag =~ /^v?(\d+\.\d+\.\d+)$/
+      # 匹配纯版本号，例如 1.0.0 或 v1.0.0
+      [$1]
+    else
+      # 不符合规则，返回原字符串的单元素数组
+      [last_git_tag]
+    end
   end
   
 end

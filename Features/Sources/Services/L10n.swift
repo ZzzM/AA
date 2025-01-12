@@ -35,6 +35,3 @@ public enum L10n {
 
 }
 
-public extension Bundle {
-    static let assets = Bundle.module
-}

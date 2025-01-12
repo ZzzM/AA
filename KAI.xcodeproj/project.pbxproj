@@ -7,10 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9834D4932D259ED9004BA7CB /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9834D4922D259ED9004BA7CB /* WidgetKit.framework */; };
+		9834D4952D259ED9004BA7CB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9834D4942D259ED9004BA7CB /* SwiftUI.framework */; };
+		9834D4A32D259EDC004BA7CB /* KAIWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9834D4912D259ED9004BA7CB /* KAIWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9834D4AB2D25A308004BA7CB /* Services in Frameworks */ = {isa = PBXBuildFile; productRef = 9834D4AA2D25A308004BA7CB /* Services */; };
+		9834D52C2D2D8705004BA7CB /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9834D5252D2D8705004BA7CB /* AppIntent.swift */; };
+		9834D52D2D2D8705004BA7CB /* KAIWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9834D5292D2D8705004BA7CB /* KAIWidget.swift */; };
+		9834D52E2D2D8705004BA7CB /* KAIWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9834D52A2D2D8705004BA7CB /* KAIWidgetBundle.swift */; };
+		9834D52F2D2D8705004BA7CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9834D5262D2D8705004BA7CB /* Assets.xcassets */; };
 		98D2477D277EFFF500F2B278 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98D2477C277EFFF500F2B278 /* Assets.xcassets */; };
 		98D9FC612CA57EC7008379A9 /* KAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D9FC602CA57EC7008379A9 /* KAIApp.swift */; };
+		98DD859F2CFE220C000BE727 /* apps in Resources */ = {isa = PBXBuildFile; fileRef = 98DD859E2CFE220C000BE727 /* apps */; };
+		98DD85A12CFF788D000BE727 /* colors_dark_tint in Resources */ = {isa = PBXBuildFile; fileRef = 98DD85A02CFF788D000BE727 /* colors_dark_tint */; };
 		98E2B96E2CA7187E00E7C594 /* Features in Frameworks */ = {isa = PBXBuildFile; productRef = 98E2B96D2CA7187E00E7C594 /* Features */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9834D4A12D259EDC004BA7CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98D2476D277EFFF300F2B278 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9834D4902D259ED9004BA7CB;
+			remoteInfo = KAIWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		98C7597E2B2507F000ED4AE4 /* Embed Foundation Extensions */ = {
@@ -19,6 +39,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				9834D4A32D259EDC004BA7CB /* KAIWidget.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -26,15 +47,36 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9834D4912D259ED9004BA7CB /* KAIWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KAIWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9834D4922D259ED9004BA7CB /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		9834D4942D259ED9004BA7CB /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		9834D5252D2D8705004BA7CB /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		9834D5262D2D8705004BA7CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9834D5272D2D8705004BA7CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9834D5282D2D8705004BA7CB /* KAIWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KAIWidget.entitlements; sourceTree = "<group>"; };
+		9834D5292D2D8705004BA7CB /* KAIWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KAIWidget.swift; sourceTree = "<group>"; };
+		9834D52A2D2D8705004BA7CB /* KAIWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KAIWidgetBundle.swift; sourceTree = "<group>"; };
 		9839E7FC2CA5760A0023F2CD /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = "<group>"; };
 		98D24775277EFFF300F2B278 /* KAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98D2477C277EFFF500F2B278 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98D24781277EFFF500F2B278 /* KAI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KAI.entitlements; sourceTree = "<group>"; };
 		98D9FC602CA57EC7008379A9 /* KAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KAIApp.swift; sourceTree = "<group>"; };
 		98D9FC662CA58A10008379A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98DD859E2CFE220C000BE727 /* apps */ = {isa = PBXFileReference; lastKnownFileType = text; path = apps; sourceTree = "<group>"; };
+		98DD85A02CFF788D000BE727 /* colors_dark_tint */ = {isa = PBXFileReference; lastKnownFileType = text; path = colors_dark_tint; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9834D48E2D259ED9004BA7CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9834D4AB2D25A308004BA7CB /* Services in Frameworks */,
+				9834D4952D259ED9004BA7CB /* SwiftUI.framework in Frameworks */,
+				9834D4932D259ED9004BA7CB /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		98D24772277EFFF300F2B278 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -46,9 +88,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9834D52B2D2D8705004BA7CB /* KAIWidget */ = {
+			isa = PBXGroup;
+			children = (
+				9834D5252D2D8705004BA7CB /* AppIntent.swift */,
+				9834D5262D2D8705004BA7CB /* Assets.xcassets */,
+				9834D5272D2D8705004BA7CB /* Info.plist */,
+				9834D5282D2D8705004BA7CB /* KAIWidget.entitlements */,
+				9834D5292D2D8705004BA7CB /* KAIWidget.swift */,
+				9834D52A2D2D8705004BA7CB /* KAIWidgetBundle.swift */,
+			);
+			path = KAIWidget;
+			sourceTree = "<group>";
+		};
 		98C7596B2B2507EE00ED4AE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9834D4922D259ED9004BA7CB /* WidgetKit.framework */,
+				9834D4942D259ED9004BA7CB /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -58,6 +115,7 @@
 			children = (
 				9839E7FC2CA5760A0023F2CD /* Features */,
 				98D24777277EFFF300F2B278 /* KAI */,
+				9834D52B2D2D8705004BA7CB /* KAIWidget */,
 				98C7596B2B2507EE00ED4AE4 /* Frameworks */,
 				98D24776277EFFF300F2B278 /* Products */,
 			);
@@ -67,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				98D24775277EFFF300F2B278 /* KAI.app */,
+				9834D4912D259ED9004BA7CB /* KAIWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,6 +137,8 @@
 				98D2477C277EFFF500F2B278 /* Assets.xcassets */,
 				98D24781277EFFF500F2B278 /* KAI.entitlements */,
 				98D9FC602CA57EC7008379A9 /* KAIApp.swift */,
+				98DD859E2CFE220C000BE727 /* apps */,
+				98DD85A02CFF788D000BE727 /* colors_dark_tint */,
 			);
 			path = KAI;
 			sourceTree = "<group>";
@@ -85,6 +146,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9834D4902D259ED9004BA7CB /* KAIWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9834D4A72D259EDC004BA7CB /* Build configuration list for PBXNativeTarget "KAIWidget" */;
+			buildPhases = (
+				9834D48D2D259ED9004BA7CB /* Sources */,
+				9834D48E2D259ED9004BA7CB /* Frameworks */,
+				9834D48F2D259ED9004BA7CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KAIWidget;
+			packageProductDependencies = (
+				9834D4AA2D25A308004BA7CB /* Services */,
+			);
+			productName = KAIWidgetExtension;
+			productReference = 9834D4912D259ED9004BA7CB /* KAIWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		98D24774277EFFF300F2B278 /* KAI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 98D24784277EFFF500F2B278 /* Build configuration list for PBXNativeTarget "KAI" */;
@@ -97,6 +178,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9834D4A22D259EDC004BA7CB /* PBXTargetDependency */,
 			);
 			name = KAI;
 			packageProductDependencies = (
@@ -113,9 +195,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1600;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
+					9834D4902D259ED9004BA7CB = {
+						CreatedOnToolsVersion = 16.2;
+					};
 					98D24774277EFFF300F2B278 = {
 						CreatedOnToolsVersion = 13.2.1;
 						DevelopmentTeam = "";
@@ -139,22 +224,43 @@
 			projectRoot = "";
 			targets = (
 				98D24774277EFFF300F2B278 /* KAI */,
+				9834D4902D259ED9004BA7CB /* KAIWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9834D48F2D259ED9004BA7CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9834D52F2D2D8705004BA7CB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		98D24773277EFFF300F2B278 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				98D2477D277EFFF500F2B278 /* Assets.xcassets in Resources */,
+				98DD859F2CFE220C000BE727 /* apps in Resources */,
+				98DD85A12CFF788D000BE727 /* colors_dark_tint in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9834D48D2D259ED9004BA7CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9834D52C2D2D8705004BA7CB /* AppIntent.swift in Sources */,
+				9834D52D2D2D8705004BA7CB /* KAIWidget.swift in Sources */,
+				9834D52E2D2D8705004BA7CB /* KAIWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		98D24771277EFFF300F2B278 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -165,11 +271,90 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		9834D4A22D259EDC004BA7CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9834D4902D259ED9004BA7CB /* KAIWidget */;
+			targetProxy = 9834D4A12D259EDC004BA7CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		9834D4A42D259EDC004BA7CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = KAIWidget/KAIWidget.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 338;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KAIWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KAIWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alpha.tts.KAI.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9834D4A52D259EDC004BA7CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = KAIWidget/KAIWidget.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 338;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KAIWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KAIWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alpha.tts.KAI.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		98D24782277EFFF500F2B278 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -234,6 +419,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -297,7 +483,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 335;
+				CURRENT_PROJECT_VERSION = 338;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -310,7 +496,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12;
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alpha.tts.KAI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -331,7 +517,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 335;
+				CURRENT_PROJECT_VERSION = 338;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -344,7 +530,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12;
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alpha.tts.KAI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -356,6 +542,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9834D4A72D259EDC004BA7CB /* Build configuration list for PBXNativeTarget "KAIWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9834D4A42D259EDC004BA7CB /* Debug */,
+				9834D4A52D259EDC004BA7CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		98D24770277EFFF300F2B278 /* Build configuration list for PBXProject "KAI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -377,6 +572,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9834D4AA2D25A308004BA7CB /* Services */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Services;
+		};
 		98E2B96D2CA7187E00E7C594 /* Features */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Features;

@@ -6,50 +6,35 @@
 //
 
 import Sparkle
+import SwiftUI
 
-public struct AppBundleKey {
+public class Updater: NSObject {
 
-    public let build = "CFBundleVersion"
-    public let version = "CFBundleShortVersionString"
-    public let identifier = "CFBundleIdentifier"
-    public let name = "CFBundleName"
-    public let copyright = "NSHumanReadableCopyright"
-
+    private lazy var updaterController = SPUStandardUpdaterController(
+        startingUpdater: false,
+        updaterDelegate: self,
+        userDriverDelegate: .none
+    )
+    
+    @AppStorage("includeBetaChannel")
+    public var includeBetaChannel = false
+    
+    public override init() {
+        super.init()
+        updaterController.startUpdater()
+    }
+    
+    public func check() {
+        updaterController.checkForUpdates(.none)
+    }
 }
 
-@dynamicMemberLookup
-public enum AppBundle {
-
-    static let shared = AppBundleKey()
-
-    public static subscript<T>(dynamicMember keyPath: KeyPath<AppBundleKey, T>) -> T {
-        let key = shared[keyPath: keyPath] as! String
-
-        return Bundle.main.infoDictionary?[key] as! T
-
+extension Updater: SPUUpdaterDelegate {
+    public func allowedChannels(for updater: SPUUpdater) -> Set<String> {
+        includeBetaChannel ? ["beta"]:[]
     }
-
-}
-
-public struct Updater {
-
-    private static let shared = Updater()
-
-    private let updaterController: SPUStandardUpdaterController
-
-    init() {
-        updaterController = .init(
-            startingUpdater: false,
-            updaterDelegate: .none,
-            userDriverDelegate: .none
-        )
-    }
-
-    public static func start() {
-        shared.updaterController.startUpdater()
-    }
-
-    public static func check() {
-        shared.updaterController.checkForUpdates(.none)
+    
+    public func feedURLString(for updater: SPUUpdater) -> String? {
+        "https://raw.githubusercontent.com/ZzzM/AA/refs/heads/main/appcast.xml"
     }
 }

@@ -17,7 +17,7 @@ function __sparkle_enclosure() {
     <sparkle:minimumSystemVersion>$SYS_MIN_VERSION</sparkle:minimumSystemVersion>
     <sparkle:fullReleaseNotesLink xml:lang=\"en\">$github/blob/main/$changelog</sparkle:fullReleaseNotesLink>
     <sparkle:fullReleaseNotesLink xml:lang=\"zh\">$github/blob/main/$changelogSC</sparkle:fullReleaseNotesLink>
-    <enclosure url=\"$github/releases/download/$APP_VERSION/$APP_NAME.dmg\" $signature type=\"applicationoctet-stream\" />"
+    <enclosure url=\"$github/releases/download/$APP_TAG_NAME/$APP_NAME.dmg\" $signature type=\"applicationoctet-stream\" />"
     echo $enclosure
     echo "DMG_PATH=$DMG_PATH" >> "$GITHUB_ENV"
     echo "APP_NAME=$APP_NAME" >> "$GITHUB_ENV"
@@ -31,7 +31,7 @@ function create_dmg() {
     rm $APP_NAME.dmg
     npm install --global create-dmg
     brew install graphicsmagick imagemagick
-    create-dmg $APP_NAME.app --dmg-title="$APP_NAME v$APP_VERSION ($APP_BUILD)" --identity='Mac Developer'
+    create-dmg $APP_NAME.app --dmg-title="$APP_NAME $APP_TAG_NAME" --identity='Mac Developer'
     mv $APP_NAME*.dmg $APP_NAME.dmg
     else
     UI.user_error!("💥 $APP_NAME.app does not exist.")
