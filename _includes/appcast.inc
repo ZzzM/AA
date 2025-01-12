@@ -3,10 +3,9 @@
     <channel>
         <title>{{ site.github.project_title }}</title>
         {% for release in site.github.releases %}
-            {% unless release.draft %}
-                {% page.release_only %}
-                    {% assign flag = '<!--' %}
-                    {% if release.body contains flag %}
+            {% unless release.draft and page.release_only %}
+                {% assign flag = '<!--' %}
+                {% if release.body contains flag %}
                     <item>
                         <title>{{ release.name }}</title>
                         <pubDate>{{ release.published_at | date_to_rfc822 }}</pubDate>
@@ -27,8 +26,7 @@
                         {% assign enclosure = body.last | strip %}
                         {{ enclosure }}
                     </item>
-                    {% endif %}
-                {% endunless %}
+                {% endif %}
             {% endunless %}
         {% endfor %}
     </channel>
