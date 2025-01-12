@@ -39,3 +39,27 @@ extension Bundle {
     }
 
 }
+
+extension ProcessInfo {
+    public static var osVersionName: String {
+        
+        let os = processInfo.operatingSystemVersion
+        
+        
+        var version = "\(os.majorVersion).\(os.minorVersion)"
+        if !os.patchVersion.isMultiple(of: 0) {
+            version += ".\(os.patchVersion)"
+        }
+   
+        var osString = ProcessInfo.processInfo.operatingSystemVersionString.dropLast()
+        var value = osString.removeLast()
+        var build = ""
+       
+        while value.isNumber || value.isUppercase {
+            build = String(value) + build
+            value = osString.removeLast()
+        }
+        
+        return "\(version) (\(build))"
+    }
+}
