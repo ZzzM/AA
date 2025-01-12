@@ -34,7 +34,7 @@ extension Updater: SPUUpdaterDelegate {
         includeBetaChannel ? ["beta"]:[]
     }
     
-    public func feedURLString(for updater: SPUUpdater) -> String? {
-        "https://raw.githubusercontent.com/ZzzM/AA/refs/heads/main/appcast.xml"
-    }
+//    public func feedURLString(for updater: SPUUpdater) -> String? {
+//        "https://raw.githubusercontent.com/ZzzM/AA/refs/heads/main/appcast.xml"
+//    }
 }
