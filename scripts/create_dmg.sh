@@ -19,10 +19,6 @@ function __sparkle_enclosure() {
     <sparkle:fullReleaseNotesLink xml:lang=\"zh\">$github/blob/main/$changelogSC</sparkle:fullReleaseNotesLink>
     <enclosure url=\"$github/releases/download/$APP_TAG_NAME/$APP_NAME.dmg\" $signature type=\"applicationoctet-stream\" />"
     echo $enclosure
-    echo "DMG_PATH=$DMG_PATH" >> "$GITHUB_ENV"
-    echo "APP_NAME=$APP_NAME" >> "$GITHUB_ENV"
-    echo "APP_VERSION=$APP_VERSION" >> "$GITHUB_ENV"
-    echo "APP_BUILD=$APP_BUILD" >> "$GITHUB_ENV"
 }
 
 function create_dmg() {
@@ -43,7 +39,6 @@ function generate_changlog() {
     echo "$(__transform $changelog)" > $LOG_PATH
     echo "$(__transform $changelogSC)" >> $LOG_PATH
     echo $(__sparkle_enclosure) >> $LOG_PATH
-    echo "LOG_PATH=$LOG_PATH" >> "$GITHUB_ENV"
 }
 
 create_dmg

@@ -17,32 +17,22 @@ struct KAIApp: App {
 
     private let updater = Updater()
     
-//    init() {
-//
-//        let url = Bundle.main.url(forResource: "apps", withExtension: .none)
-//        guard let url, let content = try? String(contentsOf: url, encoding: .utf8).trimmingCharacters(in: .newlines)
-//        else {
-//            return
-//        }
-//
-//        for arr in content.components(separatedBy: .newlines) {
-//
-//            let source = arr.components(separatedBy: "$$")
-//            precondition(source.count == 3)
-//            let model = (name: source[0], es: source[1], link: source[2])
-//            print(model.name, model.es, model.link)
-//        }
-//    }
-
+    
     var body: some Scene {
         WindowGroup {
             MainScreen(updater: updater)
                 .environment(\.locale, .init(identifier: "en"))
                 .task {
+                    if let window = NSApp.mainWindow {
+                        window.setContentSize(NSSize(width: 300, height: 320))
+                        window.styleMask.remove(.resizable)
+                    }
                     await Task.waitTillCancel()
                     NSApplication.shared.terminate(.none)
                 }
+
         }
+      
 
     }
 }

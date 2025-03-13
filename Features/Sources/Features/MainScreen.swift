@@ -11,7 +11,6 @@ public struct MainScreen: View {
 
     private let updater: Updater
 
-
     @State
     private var includeBetaChannel: Bool {
         didSet {
@@ -28,42 +27,63 @@ public struct MainScreen: View {
         VStack {
 
             Image(nsImage: NSApplication.shared.applicationIconImage)
+                .resizable()
+                .frame(width: 60, height: 60)
 
             Text(Bundle.appName)
-                .font(.title)
+                .font(.title2.bold())
 
-            Text(L10n.version, bundle: .assets) +
-            Text(" " + Bundle.appVersionName)
-  
-            Text("macOS " + ProcessInfo.osVersionName)
-            
-            Toggle(
-                "Beta Channel",
-                isOn: Binding(
-                    get: {
-                        includeBetaChannel
-                    },
-                    set: {
-                        includeBetaChannel = $0
+            List {
+
+                Section {
+                    HStack {
+                        Text(L10n.version, bundle: .assets)
+                        Spacer()
+                        Text(Bundle.appVersionName)
                     }
-                )
-            )
-            .toggleStyle(.switch)
-            
-            Button(role: .destructive) {
+
+                    HStack {
+                        Text("Build")
+                        Spacer()
+                        Text(Bundle.appBuild)
+                    }
+
+                    HStack {
+                        Text("macOS")
+                        Spacer()
+                        Text(ProcessInfo.osVersionName)
+                    }
+
+                    Toggle(
+                        isOn: Binding(
+                            get: {
+                                includeBetaChannel
+                            },
+                            set: {
+                                includeBetaChannel = $0
+                            }
+                        )
+                    ) {
+                        Text("Beta")
+                    }
+                    .toggleStyle(.switch)
+                } footer: {
+                    EmptyView()
+                }
+
+            }
+            .frame(height: 115)
+
+            Button {
                 updater.check()
             } label: {
                 Text(L10n.checkForUpdates, bundle: .assets)
             }
 
-           
-     
-            
-
         }
+        .frame(maxHeight: .infinity, alignment: .top)
+        .padding()
 
     }
 
-
 }
-

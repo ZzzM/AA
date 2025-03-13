@@ -64,14 +64,15 @@ jobs:
             })
 
     - name: Bark
-      uses: monlor/bark-action@v3
+      uses: harryzcy/action-bark@v2
       if: success() || failure()
       with:
-        key: ${{ env.BARK_KEY }}
-        host: ${{ env.BARK_HOST }}
-        title: ${{ env.APP_NAME }} v${{ env.APP_VERSION }} (${{ env.APP_BUILD }})
+        status: ${{ job.status }}
+        title: ${{ env.APP_NAME }} ${{ env.APP_TAG_NAME }}
         body: ${{ job.status }}
-        icon: ${{ env.BARK_ICON }}
+        device_key: ${{ env.BARK_KEY }}
+        level: passive
+        bark_server_url: ${{ env.BARK_HOST }}
         sound: alarm
-        isArchive: 1
+        icon: ${{ env.BARK_ICON }}
 

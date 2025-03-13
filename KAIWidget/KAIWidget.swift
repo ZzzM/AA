@@ -35,24 +35,46 @@ struct SimpleEntry: TimelineEntry {
 struct KAIWidgetEntryView: View {
     var entry: Provider.Entry
 
+    
     var body: some View {
+        
+     
         HStack {
             Image(nsImage: NSApplication.shared.applicationIconImage)
 
-            VStack {
+            VStack(alignment: .leading, spacing: 5) {
 
-                Text(Bundle.appName)
-                    .font(.title)
-
-                Text(L10n.version, bundle: .assets) + Text(Bundle.appVersionName)
+                HStack(spacing: 5) {
+                    Text(Bundle.appName)
+                        .font(.title2.bold())
+                    
+                    if Bundle.appVersionName.lowercased().contains(/beta|rc/) {
+                        Image(systemName: "ladybug.fill")
+                            .foregroundStyle(.teal)
+                    } else {
+                        Image(systemName: "checkmark.seal.fill")
+                            .foregroundStyle(.tint)
+                    }
+                }
                 
-                #if DEBUG
-                    Image(systemName: "ladybug.fill")
-                        .foregroundStyle(.teal)
-                #else
-                    Image(systemName: "checkmark.seal.fill")
-                        .foregroundStyle(.tint)
-                #endif
+                HStack {
+                    Text(L10n.version, bundle: .assets)
+                    Spacer()
+                    Text(Bundle.appVersionName)
+                }
+
+                HStack {
+                    Text("Build")
+                    Spacer()
+                    Text(Bundle.appBuild)
+                }
+
+                HStack {
+                    Text("macOS")
+                    Spacer()
+                    Text(ProcessInfo.osVersionName)
+                }
+      
             }
             .padding()
         }
@@ -60,8 +82,10 @@ struct KAIWidgetEntryView: View {
     }
 }
 
+
 struct KAIWidget: Widget {
     let kind: String = "KAIWidget"
+
 
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
@@ -69,5 +93,8 @@ struct KAIWidget: Widget {
                 .containerBackground(.fill.tertiary, for: .widget)
         }
         .supportedFamilies([.systemMedium])
+        
+        
+        
     }
 }

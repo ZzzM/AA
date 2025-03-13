@@ -4,6 +4,7 @@ platform :mac do
   
   before_all do
     ENV["APP_NAME"] = "KAI"
+    ENV["APP_WIDGET_NAME"] = "KAIWidget"
     ENV["APP_TAG_NAME"] = last_git_tag
     ENV["APP_BUILD"] = "#{number_of_commits}"
     ENV["SYS_MIN_VERSION"] = "12.0"
@@ -13,6 +14,10 @@ platform :mac do
   end
 
   lane :create_dmg do
+    sh("echo APP_NAME=#{ENV["APP_NAME"]} >> $GITHUB_ENV")
+    sh("echo APP_TAG_NAME=#{ENV["APP_TAG_NAME"]} >> $GITHUB_ENV")
+    sh("echo LOG_PATH=#{ENV["LOG_PATH"]} >> $GITHUB_ENV")
+    sh("echo DMG_PATH=#{ENV["DMG_PATH"]} >> $GITHUB_ENV")
     setup
     build
     clean
@@ -22,11 +27,13 @@ platform :mac do
   private_lane :setup do
 
     path = ENV["APP_NAME"] + "/Info.plist"
+    widget_path = ENV["APP_WIDGET_NAME"] + "/Info.plist"
     ENV["APP_VERSION"] = format_version.first
     ENV["APP_VERSION_NAME"] = format_version.join(' ')
-    ENV["APP_RELEASE_NAME"] = "Version #{ENV["APP_VERSION_NAME"]}"
+    ENV["APP_RELEASE_NAME"] = "#{ENV["APP_NAME"]} #{ENV["APP_VERSION_NAME"]}"
 
     set_info_plist_value(path: path, key: "AppVersionName", value: ENV["APP_VERSION_NAME"])
+    set_info_plist_value(path: widget_path, key: "AppVersionName", value: ENV["APP_VERSION_NAME"])
     increment_build_number_in_xcodeproj(build_number: ENV["APP_BUILD"])
     increment_version_number_in_xcodeproj(version_number: ENV["APP_VERSION"])
 
@@ -52,11 +59,17 @@ platform :mac do
     setup
     build
     clean
-    case UI.input("do you want to release app? (yes / no)")
-    when "yes"
-       sh "cd .. && zsh ./scripts/test.sh release"
-    else
-       sh "cd .. && zsh ./scripts/test.sh debug"
+
+    UI.header("#{ENV["APP_NAME"]} #{ENV["APP_TAG_NAME"]} build #{ENV["APP_BUILD"]}")
+
+    result = UI.select("Release the app now?", ["No", "Yes"])
+    case result
+    when "No"
+      UI.message("The app is debugging...")
+      sh "cd .. && zsh ./scripts/test.sh debug"
+    when "Yes"
+      UI.message("The app is Releasing...")
+      sh "cd .. && zsh ./scripts/test.sh release"
     end
   end
   
@@ -92,6 +105,15 @@ platform :mac do
     #   UI.message("NO")
     # end
     # setup
+    UI.header("#{ENV["APP_NAME"]} #{ENV["APP_TAG_NAME"]} build #{ENV["APP_BUILD"]}")
+
+    result = UI.select("Release the app now?", ["No", "Yes"])
+    case result
+    when "No"
+      UI.important("The app is debugging...")
+    when "Yes"
+      UI.important("The app is Releasing...")
+    end
 
   end
 
