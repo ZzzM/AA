@@ -11,8 +11,7 @@ env:
   PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
   BARK_KEY: ${{ secrets.BARK_KEY }}
   BARK_HOST: ${{ secrets.BARK_HOST }}
-  BARK_ICON: https://raw.githubusercontent.com/ZzzM/AA/main/KAI/Assets.xcassets/AppIcon.appiconset/icon_128x128.png
-  
+    
 jobs:
 
   build-deploy:
@@ -47,13 +46,11 @@ jobs:
             })
 
     - name: Bark
-      uses: harryzcy/action-bark@v2
+      uses: shink/bark-action@v2
       if: success() || failure()
       with:
+        key: ${{ env.BARK_KEY }}
+        host: ${{ secrets.BARK_HOST }}
         title: ${{ env.APP_NAME }} ${{ env.APP_TAG_NAME }}
         body: ${{ job.status }}
-        device_key: ${{ env.BARK_KEY }}
-        sound: alarm
-        icon: ${{ env.BARK_ICON }}
-        bark_server_url: ${{ env.BARK_HOST }}
 
