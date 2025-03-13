@@ -14,11 +14,13 @@ platform :mac do
   end
 
   lane :create_dmg do
+    setup
     sh("echo APP_NAME=#{ENV["APP_NAME"]} >> $GITHUB_ENV")
     sh("echo APP_TAG_NAME=#{ENV["APP_TAG_NAME"]} >> $GITHUB_ENV")
+    sh("echo APP_RELEASE_NAME=#{ENV["APP_RELEASE_NAME"]} >> $GITHUB_ENV")
     sh("echo LOG_PATH=#{ENV["LOG_PATH"]} >> $GITHUB_ENV")
     sh("echo DMG_PATH=#{ENV["DMG_PATH"]} >> $GITHUB_ENV")
-    setup
+
     build
     clean
     sh "cd .. && zsh ./scripts/create_dmg.sh"
