@@ -25,13 +25,12 @@ public struct MainScreen: View {
 
     public var body: some View {
         VStack {
+            
+          
 
             Image(nsImage: NSApplication.shared.applicationIconImage)
                 .resizable()
                 .frame(width: 60, height: 60)
-
-            Text(Bundle.appName)
-                .font(.title2.bold())
 
             List {
 
@@ -53,6 +52,22 @@ public struct MainScreen: View {
                         Spacer()
                         Text(ProcessInfo.osVersionName)
                     }
+                    
+                    HStack {
+                        Text("FeedURL")
+                        Spacer()
+                        if let url = updater.feedURL {
+                            Button {
+                                NSWorkspace.shared.open(url)
+                            } label: {
+                                Text(url.absoluteString)
+                                    .multilineTextAlignment(.trailing)
+    
+                            }
+                            .buttonStyle(.link)
+                        }
+                        
+                    }
 
                     Toggle(
                         isOn: Binding(
@@ -72,13 +87,16 @@ public struct MainScreen: View {
                 }
 
             }
-            .frame(height: 115)
+            .frame(height: 160)
 
+        
             Button {
                 updater.check()
             } label: {
                 Text(L10n.checkForUpdates, bundle: .assets)
             }
+            
+           // .tint(.accentColor)
 
         }
         .frame(maxHeight: .infinity, alignment: .top)

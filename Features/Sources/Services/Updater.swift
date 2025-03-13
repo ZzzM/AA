@@ -27,6 +27,10 @@ public class Updater: NSObject {
     public func check() {
         updaterController.checkForUpdates(.none)
     }
+    
+    public var feedURL: URL? {
+        updaterController.updater.feedURL
+    }
 }
 
 extension Updater: SPUUpdaterDelegate {
