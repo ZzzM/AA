@@ -44,7 +44,7 @@ jobs:
             })
 
     - name: Bark
-      uses: harryzcy/action-bark@v2
+      uses: harryzcy/action-bark@v1
       if: success() || failure()
       with:
         status: ${{ job.status }}
